@@ -14,3 +14,27 @@ Colors.ids = ['MU27T04Zlok',
 			  'o6n0c2SkIN0',
 			  '2wOdHoRI0Gs',
 			  'T5jAU3HhIRE'];
+			  
+Colors.initialize = {
+	touch:function(){
+		
+	},
+	desktop:function(){
+		$('#fullScreen').click(function(e){
+			$(document).fullScreen(true);
+			$('#intro').fadeOut('fast');
+		});
+		
+		
+		$(document).bind("fullscreenchange", function() {
+		    console.log("Fullscreen " + ($(document).fullScreen() ? "on" : "off"));
+		});
+		
+		$(document).bind("fullscreenerror", function() {
+		    alert("Browser rejected fullscreen change");
+		});
+	},
+	noFullScreen:function(){
+		
+	}
+}

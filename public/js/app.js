@@ -5,30 +5,21 @@
 //https://github.com/kayahr/jquery-fullscreen-plugin
 
 //shortcut for document.ready
-$(function(){
-	//console.log(Colors.ids);
-	//test to see if we are already in fullscreen mode
-	if($(document).fullScreen()){
-		console.log('in fullscreen');
+$(function(){	
+	//where am i?
+	if(Modernizr.touch){
+		//on touch device, so set it up that way
+		Colors.initialize.touch();
 	}else{
-		console.log('not in fullscreen');
+		//on desktop
+		
+		//make sure the desktop supports 
+		if(Modernizr.fullscreen){
+			Colors.initialize.desktop();
+		}else{
+			Colors.initialize.noFullScreen();
+		}
 	}
 	
-	//events
-	$('#fullScreen').click(function(e){
-		$(document).fullScreen(true);
-		$('#intro').fadeOut('fast', function(){
-			console.log('ok');
-			console.log($(document))
-		});
-	});
-	
-	
-	$(document).bind("fullscreenchange", function() {
-	    console.log("Fullscreen " + ($(document).fullScreen() ? "on" : "off"));
-	});
-	
-	$(document).bind("fullscreenerror", function() {
-	    alert("Browser rejected fullscreen change");
-	});
+
 });
