@@ -1,0 +1,72 @@
+@import "reset.less";
+@import "variables.less";
+@import "mixins.less";
+@import "utils.less";
+
+body,html{
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	.1color;
+}
+
+.btn{
+	padding: 4px 14px;
+	margin-bottom: 0; // For input.btn
+	font-size: 12px;
+	line-height: 12px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+
+	border:none;
+	.rounded-corners(8px);
+	background: #000;
+	opacity: 0.7;
+	color:@1color;
+	text-align: center;
+	.make-transition;
+	&:hover{
+		opacity: 0.55;
+		.make-transition(0.2s);
+	}
+	&.large{
+		height:24px;
+		font-size: 16px;
+		line-height: 8px;
+	}
+}
+
+#intro{
+	@divWidth:300px;
+	@divHeight:300px;
+	width:300px;
+	text-align: center;
+	margin-top: 40px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top: -(@divHeight/2);
+	margin-left: -(@divWidth/2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
