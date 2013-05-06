@@ -11,6 +11,10 @@ body,html{
 	.1color;
 }
 
+#main{
+	height:inherit;
+}
+
 .btn{
 	padding: 4px 14px;
 	margin-bottom: 0; // For input.btn
@@ -49,6 +53,33 @@ body,html{
 	left:50%;
 	margin-top: -(@divHeight/2);
 	margin-left: -(@divWidth/2);
+}
+
+.sidebar{
+	height:100%;
+	width:@sidebarWidth;
+}
+#rightSide{
+	.2color;
+	float: right;
+	position: relative;
+	left:@sidebarWidth;
+	.make-transition(0.2s);
+	&.open{
+		.make-transition(0.2s);
+		left:0;
+	}
+}
+#leftSide{
+	.15color;
+	float: left;
+	position: relative;
+	right:@sidebarWidth;
+	.make-transition(0.2s);
+	&.open{
+		.make-transition(0.2s);
+		right:0;
+	}
 }
 
 

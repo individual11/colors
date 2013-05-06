@@ -20,6 +20,14 @@ Colors.initialize = {
 		
 	},
 	desktop:function(){
+		var docWidth = $(window).width(),
+			rightThreshold = docWidth * .8,
+			leftThreshold = docWidth * .2,
+			isFullScreen = false;
+		//setup the correct intro
+		var intro = _.template($('#desktop-standard').html());
+		$('#intro').html(intro);
+		
 		$('#fullScreen').click(function(e){
 			$(document).fullScreen(true);
 			$('#intro').fadeOut('fast');
@@ -27,11 +35,42 @@ Colors.initialize = {
 		
 		
 		$(document).bind("fullscreenchange", function() {
-		    console.log("Fullscreen " + ($(document).fullScreen() ? "on" : "off"));
+			isFullScreen = $(document).fullScreen();
+			if(!isFullScreen){
+				$('#intro').fadeIn('fast');
+			}
+		   // console.log("Fullscreen " + ($(document).fullScreen() ? "on" : "off"));
 		});
 		
 		$(document).bind("fullscreenerror", function() {
 		    alert("Browser rejected fullscreen change");
+		});
+		
+		//checking for mousemovement
+		$(document).mousemove(function(e){
+			if(isFullScreen){
+				var $rightSide = $('#rightSide'),
+					$leftSide = $('#leftSide');
+				if(e.pageX > rightThreshold){
+					if(!$rightSide.hasClass('open')){
+						$rightSide.addClass('open')
+					}
+				}else{
+					if($rightSide.hasClass('open')){
+						$rightSide.removeClass('open')
+					}
+				}
+				
+				if(e.pageX < leftThreshold){
+					if(!$leftSide.hasClass('open')){
+						$leftSide.addClass('open')
+					}
+				}else{
+					if($leftSide.hasClass('open')){
+						$leftSide.removeClass('open')
+					}
+				}
+			}
 		});
 	},
 	noFullScreen:function(){

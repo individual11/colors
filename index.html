@@ -17,12 +17,11 @@
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <div role="main">
+  <div id="main">
 	  <div id="intro">
-	  	<h2>Welcome to Colors</h2>
-	  	<p>Cras mattis consectetur purus sit amet fermentum.</p>
-	  	<button id="fullScreen" class="btn large go-left">Go Full Screen</button> -or- <button class="btn large go-right">Exit Site</button>
+	  	
 	  </div>
+	  <div id="leftSide" class="sidebar"></div><div id="rightSide" class="sidebar"></div>
   </div>
 
 
@@ -38,5 +37,13 @@
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
+  
+  <!-- TEMPLATES -->
+  <script id="desktop-standard">
+  	<h2>Welcome to Colors</h2>
+	<p>Cras mattis consectetur purus sit amet fermentum.</p>
+	<button id="fullScreen" class="btn large go-left">Go Full Screen</button> -or- <button class="btn large go-right">Exit Site</button>
+  </script>
+  
 </body>
 </html>
