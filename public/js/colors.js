@@ -24,13 +24,13 @@ Colors.initialize = {
 			rightThreshold = docWidth * .8,
 			leftThreshold = docWidth * .2,
 			isFullScreen = false;
+			
 		//setup the correct intro
 		var intro = _.template($('#desktop-standard').html());
 		$('#intro').html(intro);
 		
 		$('#fullScreen').click(function(e){
 			$(document).fullScreen(true);
-			$('#intro').fadeOut('fast');
 		});
 		
 		
@@ -38,8 +38,9 @@ Colors.initialize = {
 			isFullScreen = $(document).fullScreen();
 			if(!isFullScreen){
 				$('#intro').fadeIn('fast');
+			}else{
+				$('#intro').fadeOut('fast');
 			}
-		   // console.log("Fullscreen " + ($(document).fullScreen() ? "on" : "off"));
 		});
 		
 		$(document).bind("fullscreenerror", function() {

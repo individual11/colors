@@ -3,6 +3,7 @@
 
 //PLUGINS//
 //https://github.com/kayahr/jquery-fullscreen-plugin
+//http://www.jplayer.org/
 
 //shortcut for document.ready
 $(function(){	
