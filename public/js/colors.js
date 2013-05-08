@@ -1,20 +1,6 @@
 var Colors = Colors ||{};
-Colors.ids = ['MU27T04Zlok',
-			  'PPpe9J196JM',
-			  'DjHxwO87uM4',
-			  'PO6iM8AnonY',
-			  'XGz0BGL6xdI',
-			  'wqmctOeHJDs',
-			  'E2SlHNAkD6Q',
-			  '6IaTV943zIE',
-			  'gtN8CkY898U',
-			  'U-UuhSUMtQY',
-			  'COgo3fPYBjg',
-			  '9UUqqcRmGAk',
-			  'o6n0c2SkIN0',
-			  '2wOdHoRI0Gs',
-			  'T5jAU3HhIRE'];
-
+Colors.position = 1;
+Colors.length = 15;
 			  
 Colors.initialize = {
 	touch:function(){
@@ -25,11 +11,12 @@ Colors.initialize = {
 			rightThreshold = docWidth * .8,
 			leftThreshold = docWidth * .2,
 			isFullScreen = false,
-			$playa = $("#playa");
+			$playa = $("#playa"),
+			$intro = $('#intro'),
+			$htmlBody = $('html,body');
 			
 		//setup the correct intro
-		var intro = _.template($('#desktop-standard').html());
-		$('#intro').html(intro);
+		$intro.html(_.template($('#desktop-standard').html()));
 		
 		$('#fullScreen').click(function(e){
 			$(document).fullScreen(true);
@@ -40,18 +27,20 @@ Colors.initialize = {
 			isFullScreen = $(document).fullScreen();
 			if(!isFullScreen){
 				$playa.jPlayer("stop");
-				$('body,html').removeClass($('html, body').data('colorClass'));
-				$('#intro').fadeIn('fast');
+				$htmlBody.removeClass(String("color" + Colors.position));
+				$intro.fadeIn('fast');
+				$('.sidebar.open').removeClass('open');
 			}else{
-				$('#intro').fadeOut('fast', function(){
+				$intro.fadeOut('fast', function(){
 					$playa.jPlayer("play");
 				});
-				$('body, html').addClass('color1').data('colorClass', 'color1');
+				$htmlBody.addClass(String("color" + Colors.position));
+				
 			}
 		});
 		
 		$(document).bind("fullscreenerror", function() {
-		    alert("Browser rejected fullscreen change");
+		    console.log("Browser rejected fullscreen change");
 		});
 		
 		//checking for mousemovement
@@ -80,6 +69,41 @@ Colors.initialize = {
 				}
 			}
 		});
+		
+		//side clicks
+		$('.sidebar').click(function(e){
+			var $this = $(this),
+				dir = $this.data('direction');
+				currentPosition = Colors.position,
+				currentPrev = (currentPosition > 1)? currentPosition-1:Colors.length,
+				currentNext = (currentPosition < Colors.length)? currentPosition+1:1;
+				
+			//ok, so where are we going?
+			if(dir === 'next'){
+				currentPosition++;
+				if(currentPosition > Colors.length){
+					currentPosition = 1;
+				}
+			}else{
+				currentPosition--;
+				if(currentPosition < 1){
+					currentPosition = Colors.length;
+				}
+			}
+			//set the colors accordingly
+			changeColor($htmlBody, String("color" + Colors.position), String("color" + currentPosition));
+			changeColor($('#leftSide'), String("color" + currentPrev), String("color" + ((currentPosition > 1)? currentPosition-1:Colors.length)));
+			changeColor($('#rightSide'), String("color" + currentNext), String("color" + ((currentPosition < Colors.length)? currentPosition+1:1)));
+			
+			Colors.position = currentPosition;
+			
+			function changeColor(who, from, to){
+				if(who.hasClass(from)) who.removeClass(from);
+				
+				who.addClass(to);
+			}
+			
+		})
 		
 		//AUDIO PART
 		$playa.jPlayer({
