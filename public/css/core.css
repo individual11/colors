@@ -3,21 +3,21 @@
 .pull-up{margin-top:-10px;}
 .go-right{float:right;}
 .go-left{float:left;}
-.color1{background-color:#feff0d;}.color1.dark{background:#d8d900;}
-.color2{background:#50bba9;}.color2.dark{background:#3c9c8c;}
-.color3{background:#512a2d;}.color3.dark{background:#2f191a;}
+.color1{background:#feff0d !important;}.color1.dark{background:#d8d900;}
+.color2{background:#50bba9 !important;}.color2.dark{background:#3c9c8c;}
+.color3{background:#512a2d !important;}.color3.dark{background:#2f191a;}
 .color4{background:#e2e0af;}.color4.dark{background:#d4d18a;}
-.color5{background:#565b93;}.color5.dark{background:#434773;}
-.color6{background:#84028a;}.color6.dark{background:#540158;}
-.color7{background:#fa572c;}.color7.dark{background:#ed3606;}
-.color8{background:#136511;}.color8.dark{background:#0b390a;}
-.color9{background:#93e423;}.color9.dark{background:#77bd17;}
-.color10{background:#eeeae7;}.color10.dark{background:#d9d0c9;}
-.color11{background:#980011;}.color11.dark{background:#65000b;}
-.color12{background:#474a51;}.color12.dark{background:#2f3136;}
-.color13{background:#c78aa4;}.color13.dark{background:#b66889;}
-.color14{background:#0b0b0b;}.color14.dark{background:#000000;}
-.color15{background:#85bafe;}.color15.dark{background:#529dfe;}
+.color5{background:#565b93 !important;}.color5.dark{background:#434773;}
+.color6{background:#84028a !important;}.color6.dark{background:#540158;}
+.color7{background:#fa572c !important;}.color7.dark{background:#ed3606;}
+.color8{background:#136511 !important;}.color8.dark{background:#0b390a;}
+.color9{background:#93e423 !important;}.color9.dark{background:#77bd17;}
+.color10{background:#eeeae7 !important;}.color10.dark{background:#d9d0c9;}
+.color11{background:#980011 !important;}.color11.dark{background:#65000b;}
+.color12{background:#474a51 !important;}.color12.dark{background:#2f3136;}
+.color13{background:#c78aa4 !important;}.color13.dark{background:#b66889;}
+.color14{background:#0b0b0b !important;}.color14.dark{background:#000000;}
+.color15{background:#85bafe !important;}.color15.dark{background:#529dfe;}
 body,html{height:100%;width:100%;margin:0;padding:0;background:#fff;}
 a{color:black;text-decoration:none;}a:hover{text-decoration:none;}
 avisited{text-decoration:none;}
@@ -26,8 +26,6 @@ avisited{text-decoration:none;}
 #intro h1{font-size:1.2em;}
 #intro h2{font-size:1.6em;font-style:italic;margin:-4px 0 40px 0;}
 #intro p{margin-top:-3px;}
-.sidebar{height:100%;width:100px;}
-#rightSide{background:#50bba9;float:right;position:relative;left:100px;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}#rightSide.dark{background:#3c9c8c;}
-#rightSide.open{-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;left:0;}
-#leftSide{background:#85bafe;float:left;position:relative;right:100px;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}#leftSide.dark{background:#529dfe;}
-#leftSide.open{-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;right:0;}
+.sidebar{height:100%;width:100px;cursor:pointer;}
+#rightSide{float:right;position:relative;left:100px;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}#rightSide.open{-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;left:0;}
+#leftSide{float:left;position:relative;right:100px;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}#leftSide.open{-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;right:0;}
