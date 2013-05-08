@@ -39,7 +39,7 @@ Colors.initialize = {
 		$(document).bind("fullscreenchange", function() {
 			isFullScreen = $(document).fullScreen();
 			if(!isFullScreen){
-				$playa.jPlayer("pause", 0);
+				$playa.jPlayer("stop");
 				$('body,html').removeClass($('html, body').data('colorClass'));
 				$('#intro').fadeIn('fast');
 			}else{
