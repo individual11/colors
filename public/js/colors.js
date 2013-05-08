@@ -14,6 +14,7 @@ Colors.ids = ['MU27T04Zlok',
 			  'o6n0c2SkIN0',
 			  '2wOdHoRI0Gs',
 			  'T5jAU3HhIRE'];
+
 			  
 Colors.initialize = {
 	touch:function(){
@@ -23,7 +24,8 @@ Colors.initialize = {
 		var docWidth = $(window).width(),
 			rightThreshold = docWidth * .8,
 			leftThreshold = docWidth * .2,
-			isFullScreen = false;
+			isFullScreen = false,
+			$playa = $("#playa");
 			
 		//setup the correct intro
 		var intro = _.template($('#desktop-standard').html());
@@ -37,9 +39,14 @@ Colors.initialize = {
 		$(document).bind("fullscreenchange", function() {
 			isFullScreen = $(document).fullScreen();
 			if(!isFullScreen){
+				$playa.jPlayer("pause", 0);
+				$('body,html').removeClass($('html, body').data('colorClass'));
 				$('#intro').fadeIn('fast');
 			}else{
-				$('#intro').fadeOut('fast');
+				$('#intro').fadeOut('fast', function(){
+					$playa.jPlayer("play");
+				});
+				$('body, html').addClass('color1').data('colorClass', 'color1');
 			}
 		});
 		
@@ -73,6 +80,18 @@ Colors.initialize = {
 				}
 			}
 		});
+		
+		//AUDIO PART
+		$playa.jPlayer({
+	        ready: function(event) {
+	            $(this).jPlayer("setMedia", {
+	                m4a: "/public/music/test.m4a"
+	            });
+	        },
+	        swfPath: "public/js/plugins",
+	        supplied: "m4a",
+	        solution:"flash,html"
+	    });
 	},
 	noFullScreen:function(){
 		
