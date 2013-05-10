@@ -99,7 +99,7 @@ Colors.initialize = {
 			
 			//change the song
 			$playa.jPlayer("setMedia", {
-                mp3: "/public/music/" + Colors.position + ".mp3"
+                mp3: "public/music/" + Colors.position + ".mp3"
             }).jPlayer("play");
 			
 			function changeColor(who, from, to){
@@ -114,7 +114,7 @@ Colors.initialize = {
 		$playa.jPlayer({
 	        ready: function(event) {
 	            $(this).jPlayer("setMedia", {
-	                mp3: "/public/music/" + Colors.position + ".mp3"
+	                mp3: "public/music/" + Colors.position + ".mp3"
 	            });
 	        },
 	        swfPath: "public/js/plugins",
