@@ -17,13 +17,7 @@
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <div id="main">
-	  <div id="intro">
-	  	
-	  </div>
-	  <div id="leftSide" class="sidebar color15" data-direction="previous"></div>
-	  <div id="rightSide" class="sidebar color2" data-direction="next"></div>
-  </div>
+  <div id="main"></div>
   <div id="playa"></div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -41,10 +35,21 @@
   
   <!-- TEMPLATES -->
   <script id="desktop-standard">
-  	<h1>Empress of</h1>
-  	<p>- - -</p>
-	<h2>Colorminutes</h2>
-	<a href="#" id="fullScreen">play</a>
+  	<div id="intro">
+	  	<h1>Empress of</h1>
+	  	<p>- - -</p>
+		<h2>Colorminutes</h2>
+		<a href="#" id="fullScreen">play</a>
+  	</div>
+	<div id="leftSide" class="sidebar color15" data-direction="previous"></div>
+	<div id="rightSide" class="sidebar color2" data-direction="next"></div>
+  </script>
+  <script id="mobile-standard">
+  	<div id="intro">
+	  	<h1>Empress of</h1>
+	  	<p>- - -</p>
+		<h2>Colorminutes</h2>
+  	</div>
   </script>
   
 </body>

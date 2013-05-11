@@ -4,6 +4,14 @@ Colors.length = 15;
 			  
 Colors.initialize = {
 	touch:function(){
+		var $htmlBody = $('html,body'),
+			$playa = $("#playa"),
+			$main = $('#main');
+		
+		$main.html(_.template($('#mobile-standard').html()));
+		var $intro = $('#intro');
+		
+		var fadeInTimeout = setTimeout(function(){$intro.fadeOut('fast');}, 1500);
 		
 	},
 	desktop:function(){
@@ -12,11 +20,12 @@ Colors.initialize = {
 			leftThreshold = docWidth * .2,
 			isFullScreen = false,
 			$playa = $("#playa"),
-			$intro = $('#intro'),
+			$main = $('#main'),
 			$htmlBody = $('html,body');
 			
 		//setup the correct intro
-		$intro.html(_.template($('#desktop-standard').html()));
+		$main.html(_.template($('#desktop-standard').html()));
+		var $intro = $('#intro');
 		
 		$('#fullScreen').click(function(e){
 			$(document).fullScreen(true);
