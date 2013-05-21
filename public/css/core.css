@@ -3,6 +3,7 @@
 .pull-up{margin-top:-10px;}
 .go-right{float:right;}
 .go-left{float:left;}
+.no-mouse{cursor:none !important;}
 .color1{background:#feff0d !important;}.color1.dark{background:#d8d900;}
 .color2{background:#50bba9 !important;}.color2.dark{background:#3c9c8c;}
 .color3{background:#512a2d !important;}.color3.dark{background:#2f191a;}
