@@ -1,22 +1,85 @@
+//main object
 var Colors = Colors ||{};
 Colors.position = 1;
 Colors.length = 15;
+
+Colors.core = {
+	changeTrack:function(trackNumber){
+		app.setLocation('#/track/'+trackNumber);
+	},
+	nextTrack:function(){
+		var currentPosition = Colors.position + 1;
+		if(currentPosition > Colors.length){
+			currentPosition = 1;
+		}
+		Colors.core.changeTrack(currentPosition);
+	},
+	prevTrack:function(){
+		var currentPosition = Colors.position - 1;
+		if(currentPosition < 1){
+			currentPosition = Colors.length;
+		}
+		Colors.core.changeTrack(currentPosition);
+	}
+}
 			  
 Colors.initialize = {
 	touch:function(){
+		isTouch = true;
+		
+		$main.html(_.template($('#mobile-standard').html()));
+		var $intro = $('#intro');
+		
+		var fadeInTimeout = setTimeout(init, 1500);
+		function init(){
+			$intro.fadeOut('fast', function(){
+				$playa.jPlayer("play");
+			});
+			$htmlBody.addClass(String("color" + Colors.position));
+							
+			/*
+		http://stackoverflow.com/questions/2701139/standalone-jquery-touch-method
+		$('.swipe').swipe({
+		 swipeLeft: function() { $('#someDiv').fadeIn() },
+		 swipeRight: function() { $('#someDiv').fadeOut() },
+		})
+		
+		*/
+		}
+		
+		//AUDIO PART
+		$playa.jPlayer({
+	        ready: function(event) {
+	            $(this).jPlayer("setMedia", {
+	                mp3: "public/music/" + Colors.position + ".mp3"
+	            });
+	        },
+	        ended: function() { // The $.jPlayer.event.ended event
+				Colors.core.nextTrack(); // go to next song
+			},
+	        swfPath: "public/js/plugins",
+	        supplied: "mp3",
+	        solution:"flash,html"
+	    });
 		
 	},
 	desktop:function(){
+		isDesktop = true;
+		//setup the correct intro
+		$main.html(_.template($('#desktop-standard').html()));
+		
 		var docWidth = $(window).width(),
 			rightThreshold = docWidth * .8,
 			leftThreshold = docWidth * .2,
-			isFullScreen = false,
-			$playa = $("#playa"),
-			$intro = $('#intro'),
-			$htmlBody = $('html,body');
+			$intro = $('#intro');
 			
-		//setup the correct intro
-		$intro.html(_.template($('#desktop-standard').html()));
+			
+		//hide the mouse stuff
+		var justHidden = false,
+			hideMouseTimeout,
+			mouseTimer = 1000;
+			
+		
 		
 		$('#fullScreen').click(function(e){
 			$(document).fullScreen(true);
@@ -30,12 +93,17 @@ Colors.initialize = {
 				$htmlBody.removeClass(String("color" + Colors.position));
 				$intro.fadeIn('fast');
 				$('.sidebar.open').removeClass('open');
+				clearTimeout(hideMouseTimeout);
+				$('html').css({cursor: 'default'});
+				isFullScreen = false;
+				app.setLocation('/#');
 			}else{
+				console.log('ok');
 				$intro.fadeOut('fast', function(){
 					$playa.jPlayer("play");
 				});
 				$htmlBody.addClass(String("color" + Colors.position));
-				
+				isFullScreen = true;
 			}
 		});
 		
@@ -43,6 +111,20 @@ Colors.initialize = {
 		    console.log("Browser rejected fullscreen change");
 		});
 		
+		//side clicks
+		$('.sidebar').click(function(e){
+			var $this = $(this),
+				dir = $this.data('direction');
+				
+			//ok, so where are we going?
+			if(dir === 'next'){
+				Colors.core.nextTrack();
+			}else{
+				Colors.core.prevTrack();
+			}
+			
+		});
+	
 		//checking for mousemovement
 		$(document).mousemove(function(e){
 			if(isFullScreen){
@@ -67,49 +149,28 @@ Colors.initialize = {
 						$leftSide.removeClass('open')
 					}
 				}
+				
+				//mouseMoveStuff
+				if (!justHidden) {
+		            justHidden = false;
+		            clearTimeout(hideMouseTimeout);
+		            $('html').css({cursor: 'default'});
+		            hideMouseTimeout = setTimeout(hide, mouseTimer);
+		        }
+				
 			}
+			
 		});
-		
-		//side clicks
-		$('.sidebar').click(function(e){
-			var $this = $(this),
-				dir = $this.data('direction');
-				currentPosition = Colors.position,
-				currentPrev = (currentPosition > 1)? currentPosition-1:Colors.length,
-				currentNext = (currentPosition < Colors.length)? currentPosition+1:1;
+	
+	
+		function hide() {
+		    $('html').css({cursor: 'none'});
+		    justHidden = true;
+		    setTimeout(function() {
+		        justHidden = false;
+		    }, 500);
+		}
 				
-			//ok, so where are we going?
-			if(dir === 'next'){
-				currentPosition++;
-				if(currentPosition > Colors.length){
-					currentPosition = 1;
-				}
-			}else{
-				currentPosition--;
-				if(currentPosition < 1){
-					currentPosition = Colors.length;
-				}
-			}
-			//set the colors accordingly
-			changeColor($htmlBody, String("color" + Colors.position), String("color" + currentPosition));
-			changeColor($('#leftSide'), String("color" + currentPrev), String("color" + ((currentPosition > 1)? currentPosition-1:Colors.length)));
-			changeColor($('#rightSide'), String("color" + currentNext), String("color" + ((currentPosition < Colors.length)? currentPosition+1:1)));
-			
-			Colors.position = currentPosition;
-			
-			//change the song
-			$playa.jPlayer("setMedia", {
-                mp3: "public/music/" + Colors.position + ".mp3"
-            }).jPlayer("play");
-			
-			function changeColor(who, from, to){
-				if(who.hasClass(from)) who.removeClass(from);
-				
-				who.addClass(to);
-			}
-			
-		})
-		
 		//AUDIO PART
 		$playa.jPlayer({
 	        ready: function(event) {
@@ -117,10 +178,17 @@ Colors.initialize = {
 	                mp3: "public/music/" + Colors.position + ".mp3"
 	            });
 	        },
+	        ended: function() { // The $.jPlayer.event.ended event
+				Colors.core.nextTrack(); // go to next song
+			},
 	        swfPath: "public/js/plugins",
 	        supplied: "mp3",
 	        solution:"flash,html"
 	    });
+	    
+	    //SAMMY PART.. run the app
+	    //app.raise_errors = true;
+	    app.run();
 	},
 	noFullScreen:function(){
 		

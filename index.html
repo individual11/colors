@@ -6,10 +6,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
+  <title>Colorminutes</title>
   <meta name="description" content="">
 
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="public/css/core.css">
 
   <script src="public/js/libs/modernizr.js"></script>
@@ -17,19 +17,15 @@
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <div id="main">
-	  <div id="intro">
-	  	
-	  </div>
-	  <div id="leftSide" class="sidebar color15" data-direction="previous"></div>
-	  <div id="rightSide" class="sidebar color2" data-direction="next"></div>
-  </div>
+  <div id="main"></div>
   <div id="playa"></div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="public/js/libs/jquery.min.js"><\/script>')</script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
   <script>window._ || document.write('<script src="public/js/libs/underscore.min.js"><\/script>')</script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js"></script>
+  <script>window.Sammy || document.write('<script src="public/js/libs/sammy.min.js"><\/script>')</script>
   <script src="public/js/app-ck.js"></script>
 
   <script>
@@ -41,10 +37,21 @@
   
   <!-- TEMPLATES -->
   <script id="desktop-standard">
-  	<h1>Empress of</h1>
-  	<p>- - -</p>
-	<h2>Colorminutes</h2>
-	<a href="#" id="fullScreen">play</a>
+  	<div id="intro">
+	  	<h1>Empress of</h1>
+	  	<p>- - -</p>
+		<h2>Colorminutes</h2>
+		<a href="#" id="fullScreen">play</a>
+  	</div>
+	<div id="leftSide" class="sidebar color15" data-direction="previous"></div>
+	<div id="rightSide" class="sidebar color2" data-direction="next"></div>
+  </script>
+  <script id="mobile-standard">
+  	<div id="intro">
+	  	<h1>Empress of</h1>
+	  	<p>- - -</p>
+		<h2>Colorminutes</h2>
+  	</div>
   </script>
   
 </body>
