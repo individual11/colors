@@ -1,12 +1,31 @@
+//main object
 var Colors = Colors ||{};
 Colors.position = 1;
 Colors.length = 15;
+
+Colors.core = {
+	changeTrack:function(trackNumber){
+		app.setLocation('#/track/'+trackNumber);
+	},
+	nextTrack:function(){
+		var currentPosition = Colors.position + 1;
+		if(currentPosition > Colors.length){
+			currentPosition = 1;
+		}
+		Colors.core.changeTrack(currentPosition);
+	},
+	prevTrack:function(){
+		var currentPosition = Colors.position - 1;
+		if(currentPosition < 1){
+			currentPosition = Colors.length;
+		}
+		Colors.core.changeTrack(currentPosition);
+	}
+}
 			  
 Colors.initialize = {
 	touch:function(){
-		var $htmlBody = $('html,body'),
-			$playa = $("#playa"),
-			$main = $('#main');
+		isTouch = true;
 		
 		$main.html(_.template($('#mobile-standard').html()));
 		var $intro = $('#intro');
@@ -42,22 +61,23 @@ Colors.initialize = {
 		
 	},
 	desktop:function(){
+	
+		//setup the correct intro
+		$main.html(_.template($('#desktop-standard').html()));
+		
 		var docWidth = $(window).width(),
 			rightThreshold = docWidth * .8,
 			leftThreshold = docWidth * .2,
-			isFullScreen = false,
-			$playa = $("#playa"),
-			$main = $('#main'),
-			$htmlBody = $('html,body');
+			isDesktop = true,
+			$intro = $('#intro');
+			
 			
 		//hide the mouse stuff
 		var justHidden = false,
 			hideMouseTimeout,
 			mouseTimer = 1000;
 			
-		//setup the correct intro
-		$main.html(_.template($('#desktop-standard').html()));
-		var $intro = $('#intro');
+		
 		
 		$('#fullScreen').click(function(e){
 			$(document).fullScreen(true);
@@ -74,6 +94,7 @@ Colors.initialize = {
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
 			}else{
+				console.log('ok');
 				$intro.fadeOut('fast', function(){
 					$playa.jPlayer("play");
 				});
@@ -89,39 +110,14 @@ Colors.initialize = {
 		$('.sidebar').click(function(e){
 			var $this = $(this),
 				dir = $this.data('direction');
-				currentPosition = Colors.position,
-				currentPrev = (currentPosition > 1)? currentPosition-1:Colors.length,
-				currentNext = (currentPosition < Colors.length)? currentPosition+1:1;
 				
 			//ok, so where are we going?
 			if(dir === 'next'){
-				currentPosition++;
-				if(currentPosition > Colors.length){
-					currentPosition = 1;
-				}
+				Colors.core.nextTrack();
 			}else{
-				currentPosition--;
-				if(currentPosition < 1){
-					currentPosition = Colors.length;
-				}
+				Colors.core.prevTrack();
 			}
-			//set the colors accordingly
-			changeColor($htmlBody, String("color" + Colors.position), String("color" + currentPosition));
-			changeColor($('#leftSide'), String("color" + currentPrev), String("color" + ((currentPosition > 1)? currentPosition-1:Colors.length)));
-			changeColor($('#rightSide'), String("color" + currentNext), String("color" + ((currentPosition < Colors.length)? currentPosition+1:1)));
 			
-			Colors.position = currentPosition;
-			
-			//change the song
-			$playa.jPlayer("setMedia", {
-                mp3: "public/music/" + Colors.position + ".mp3"
-            }).jPlayer("play");
-			
-			function changeColor(who, from, to){
-				if(who.hasClass(from)) who.removeClass(from);
-				
-				who.addClass(to);
-			}
 		});
 	
 		//checking for mousemovement
@@ -181,6 +177,10 @@ Colors.initialize = {
 	        supplied: "mp3",
 	        solution:"flash,html"
 	    });
+	    
+	    //SAMMY PART.. run the app
+	    //app.raise_errors = true;
+	    app.run();
 	},
 	noFullScreen:function(){
 		
