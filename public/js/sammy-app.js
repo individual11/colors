@@ -1,11 +1,9 @@
 var app = Sammy('#main', function(){
 	this.get('/#/track/:trackNumber', function(context) {
-		console.log(isDesktop, isFullScreen);
-		if(isDesktop && isFullScreen || isTouch){
-	        var currentPosition = this.params['trackNumber'];
-	        
-	        var currentPrev = (currentPosition > 1)? currentPosition-1:Colors.length,
-			currentNext = (currentPosition < Colors.length)? currentPosition+1:1;
+		var currentPosition = Number(this.params['trackNumber']);
+		if((isDesktop && isFullScreen || isTouch) && currentPosition != NaN){
+	        var currentPrev = (Colors.position > 1)? Colors.position-1:Colors.length,
+			currentNext = (Colors.position < Colors.length)? Colors.position+1:1;
 			
 			//set the colors accordingly
 			changeColor($htmlBody, String("color" + Colors.position), String("color" + currentPosition));
@@ -21,9 +19,11 @@ var app = Sammy('#main', function(){
 			
 			function changeColor(who, from, to){
 				if(who.hasClass(from)) who.removeClass(from);
-				
+				console.log(from, to);
 				who.addClass(to);
 			}
+		}else{
+			app.setLocation('/#');
 		}
      });
      

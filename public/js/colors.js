@@ -61,14 +61,13 @@ Colors.initialize = {
 		
 	},
 	desktop:function(){
-	
+		isDesktop = true;
 		//setup the correct intro
 		$main.html(_.template($('#desktop-standard').html()));
 		
 		var docWidth = $(window).width(),
 			rightThreshold = docWidth * .8,
 			leftThreshold = docWidth * .2,
-			isDesktop = true,
 			$intro = $('#intro');
 			
 			
@@ -93,12 +92,15 @@ Colors.initialize = {
 				$('.sidebar.open').removeClass('open');
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
+				isFullScreen = false;
+				app.setLocation('/#');
 			}else{
 				console.log('ok');
 				$intro.fadeOut('fast', function(){
 					$playa.jPlayer("play");
 				});
 				$htmlBody.addClass(String("color" + Colors.position));
+				isFullScreen = true;
 			}
 		});
 		
