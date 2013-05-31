@@ -54,6 +54,9 @@ Colors.initialize = {
 	                mp3: "public/music/" + Colors.position + ".mp3"
 	            });
 	        },
+	        ended: function() { // The $.jPlayer.event.ended event
+				Colors.core.nextTrack(); // go to next song
+			},
 	        swfPath: "public/js/plugins",
 	        supplied: "mp3",
 	        solution:"flash,html"
@@ -175,6 +178,9 @@ Colors.initialize = {
 	                mp3: "public/music/" + Colors.position + ".mp3"
 	            });
 	        },
+	        ended: function() { // The $.jPlayer.event.ended event
+				Colors.core.nextTrack(); // go to next song
+			},
 	        swfPath: "public/js/plugins",
 	        supplied: "mp3",
 	        solution:"flash,html"
