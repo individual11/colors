@@ -7,8 +7,8 @@ var app = Sammy('#main', function(){
 			
 			//set the colors accordingly
 			changeColor($htmlBody, String("color" + Colors.position), String("color" + currentPosition));
-			changeColor($('#leftSide'), String("color" + currentPrev), String("color" + ((currentPosition > 1)? currentPosition-1:Colors.length)));
-			changeColor($('#rightSide'), String("color" + currentNext), String("color" + ((currentPosition < Colors.length)? currentPosition+1:1)));
+			changeColor($('#leftSide'), String("tri-color" + currentPrev), String("tri-color" + ((currentPosition > 1)? currentPosition-1:Colors.length)));
+			changeColor($('#rightSide'), String("tri-color" + currentNext), String("tri-color" + ((currentPosition < Colors.length)? currentPosition+1:1)));
 			
 			Colors.position = currentPosition;
 			
@@ -18,6 +18,7 @@ var app = Sammy('#main', function(){
 	        }).jPlayer("play");
 			
 			function changeColor(who, from, to){
+				console.log('new');
 				if(who.hasClass(from)) who.removeClass(from);
 				console.log(from, to);
 				who.addClass(to);

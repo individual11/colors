@@ -12,3 +12,18 @@
   -o-border-radius: @radius;
   border-radius: @radius;
 }
+
+.set-triangle(@id: 1){
+	background:url("../img/triangles/@{id}.png") no-repeat right center;
+	&.next{
+		//if we need something here
+	}
+	&.prev{
+		background-position: right center;
+		-webkit-transform:scaleX(-1);
+		-moz-transform:scaleX(-1);
+		-ms-transform:scaleX(-1);
+		-o-transform:scaleX(-1);
+		transform:scaleX(-1);
+	}
+}
