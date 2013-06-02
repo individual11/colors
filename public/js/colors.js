@@ -115,6 +115,17 @@ Colors.initialize = {
 		    console.log("Browser rejected fullscreen change");
 		});
 		
+		$(document).keydown(function(e){
+			switch(e.keyCode){
+				case 37://left
+					Colors.core.prevTrack();
+					break;
+				case 39://right
+					Colors.core.nextTrack();
+					break;
+			}
+		});
+		
 		//side clicks
 		$('.sidebar').click(function(e){
 			var $this = $(this),
