@@ -104,6 +104,10 @@ Colors.initialize = {
 				});
 				$htmlBody.addClass(String("color" + Colors.position));
 				isFullScreen = true;
+				//reset the variables for slide in/out
+				docWidth = $(window).width();
+				rightThreshold = docWidth * .8;
+				leftThreshold = docWidth * .2;
 			}
 		});
 		
