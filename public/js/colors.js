@@ -68,10 +68,7 @@ Colors.initialize = {
 		//setup the correct intro
 		$main.html(_.template($('#desktop-standard').html()));
 		
-		var docWidth = $(window).width(),
-			rightThreshold = docWidth * .8,
-			leftThreshold = docWidth * .2,
-			$intro = $('#intro');
+		var $intro = $('#intro');
 			
 			
 		//hide the mouse stuff
@@ -97,6 +94,7 @@ Colors.initialize = {
 				$('html').css({cursor: 'default'});
 				isFullScreen = false;
 				app.setLocation('/#');
+				$('.sidebar').hide();//fixes a bug with body-width
 			}else{
 				console.log('ok');
 				$intro.fadeOut('fast', function(){
@@ -104,10 +102,7 @@ Colors.initialize = {
 				});
 				$htmlBody.addClass(String("color" + Colors.position));
 				isFullScreen = true;
-				//reset the variables for slide in/out
-				docWidth = $(window).width();
-				rightThreshold = docWidth * .8;
-				leftThreshold = docWidth * .2;
+				$('.sidebar').show();//fixes a bug with body-width
 			}
 		});
 		
@@ -143,6 +138,10 @@ Colors.initialize = {
 		//checking for mousemovement
 		$(document).mousemove(function(e){
 			if(isFullScreen){
+				var docWidth = $(window).width(),
+				rightThreshold = docWidth * .8,
+				leftThreshold = docWidth * .2;
+				
 				var $rightSide = $('#rightSide'),
 					$leftSide = $('#leftSide');
 				if(e.pageX > rightThreshold){
