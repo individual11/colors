@@ -5,7 +5,9 @@ Colors.length = 15;
 
 Colors.core = {
 	changeTrack:function(trackNumber){
-		app.setLocation('#/track/'+trackNumber);
+		if(Colors.position != trackNumber){
+			app.setLocation('#/track/'+trackNumber);
+		}
 	},
 	nextTrack:function(){
 		var currentPosition = Colors.position + 1;
@@ -21,6 +23,14 @@ Colors.core = {
 		}
 		Colors.core.changeTrack(currentPosition);
 	}
+}
+
+Colors.utils = {
+	preload:function(arrayOfImages) {
+	    $(arrayOfImages).each(function(){
+	    	(new Image()).src = this;
+	    });
+    }
 }
 			  
 Colors.initialize = {
@@ -68,7 +78,13 @@ Colors.initialize = {
 		//setup the correct intro
 		$main.html(_.template($('#desktop-standard').html()));
 		
-		var $intro = $('#intro');
+		var $intro = $('#intro'),
+			$triNav = $('#tri-nav'),
+			$rightSide = $('#rightSide'),
+			$leftSide = $('#leftSide');
+			
+		//hide the bottom nav immediately
+		$triNav.slideUp(1);
 			
 			
 		//hide the mouse stuff
@@ -76,6 +92,27 @@ Colors.initialize = {
 			hideMouseTimeout,
 			mouseTimer = 1000;
 			
+		//preload images		
+		Colors.utils.preload([
+			'public/img/triangles/bottom_nav.png',
+		    'public/img/triangles/1.png',
+		    'public/img/triangles/2.png',
+		    'public/img/triangles/3.png',
+		    'public/img/triangles/4.png',
+		    'public/img/triangles/5.png',
+		    'public/img/triangles/6.png',
+		    'public/img/triangles/7.png',
+		    'public/img/triangles/8.png',
+		    'public/img/triangles/9.png',
+		    'public/img/triangles/10.png',
+		    'public/img/triangles/11.png',
+		    'public/img/triangles/12.png',
+		    'public/img/triangles/13.png',
+		    'public/img/triangles/14.png',
+		    'public/img/triangles/15.png'
+		]);
+
+		
 		
 		
 		$('#fullScreen').click(function(e){
@@ -90,13 +127,17 @@ Colors.initialize = {
 				$htmlBody.removeClass(String("color" + Colors.position));
 				$intro.fadeIn('fast');
 				$('.sidebar.open').removeClass('open');
+				
+				if($triNav.hasClass('up')){
+					$triNav.removeClass('up').slideUp(1);
+				}
+				
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
 				isFullScreen = false;
 				app.setLocation('/#');
 				$('.sidebar').hide();//fixes a bug with body-width
 			}else{
-				console.log('ok');
 				$intro.fadeOut('fast', function(){
 					$playa.jPlayer("play");
 				});
@@ -134,16 +175,22 @@ Colors.initialize = {
 			}
 			
 		});
+		
+		//bototm nav clicks
+		$('.bottom-tri').click(function(e){
+			Colors.core.changeTrack($(this).data('id'));
+		});
 	
 		//checking for mousemovement
 		$(document).mousemove(function(e){
 			if(isFullScreen){
 				var docWidth = $(window).width(),
+				docHeight = $(window).height(),
+				bottomThreshold = docHeight * .9,
 				rightThreshold = docWidth * .8,
 				leftThreshold = docWidth * .2;
 				
-				var $rightSide = $('#rightSide'),
-					$leftSide = $('#leftSide');
+				//left/right nav
 				if(e.pageX > rightThreshold){
 					if(!$rightSide.hasClass('open')){
 						$rightSide.addClass('open')
@@ -153,7 +200,6 @@ Colors.initialize = {
 						$rightSide.removeClass('open')
 					}
 				}
-				
 				if(e.pageX < leftThreshold){
 					if(!$leftSide.hasClass('open')){
 						$leftSide.addClass('open')
@@ -161,6 +207,17 @@ Colors.initialize = {
 				}else{
 					if($leftSide.hasClass('open')){
 						$leftSide.removeClass('open')
+					}
+				}
+				
+				//for the bottom nav
+				if(e.pageY > bottomThreshold){
+					if(!$triNav.hasClass('up')){
+						$triNav.addClass('up').slideDown('fast');
+					}
+				}else{
+					if($triNav.hasClass('up')){
+						$triNav.removeClass('up').slideUp('fast');
 					}
 				}
 				
