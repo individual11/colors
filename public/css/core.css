@@ -57,6 +57,7 @@ avisited{text-decoration:none;}
 #intro h1{font-size:1.2em;}
 #intro h2{font-size:1.6em;font-style:italic;margin:-4px 0 40px 0;}
 #intro p{margin-top:-3px;}
+#intro .clickable{cursor:pointer;}
 .sidebar{height:100%;width:235px;cursor:pointer;display:none;}
 #rightSide{float:right;position:relative;left:235px;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}#rightSide.open{-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;left:0;}
 #leftSide{float:left;position:relative;right:235px;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;}#leftSide.open{-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out;right:0;}
