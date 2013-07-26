@@ -38,16 +38,19 @@
   <!-- TEMPLATES -->
   <script id="desktop-standard">
   	<div id="intro">
-  		<img id="fullScreen" class="clickable" src="public/img/intro-final.png" />
-	  	<!--
-<h1>Empress of</h1>
-	  	<p>- - -</p>
-		<h2>Colorminutes</h2>
-		<a href="#" id="fullScreen">play</a>
--->
+  		<div id="fullScreen" class="clickable">
+  			<img id="introTriangle" src="public/img/landing_page_triangle.png" alt="intro to colorminutes" />
+  		</div>
   	</div>
 	<div id="leftSide" class="sidebar prev tri-color15" data-direction="previous"></div>
 	<div id="rightSide" class="sidebar next tri-color2" data-direction="next"></div>
+	<div id="top-nav">
+		<ul id="social-nav">
+			<li id="twitter" class="top-tri" data-id="twitter"></li>
+			<li id="facebook" class="top-tri" data-id="facebook"></li>
+			<li id="google-plus" class="top-tri" data-id="google-plus"></li>
+		</ul>
+	</div>
 	<div id="bottom-nav">
 		<ul id="tri-nav">
 			<li id="tri1" class="bottom-tri" data-id="1"></li>
@@ -73,6 +76,13 @@
 	  	<h1>Empress of</h1>
 	  	<p>- - -</p>
 		<h2>Colorminutes</h2>
+  	</div>
+  </script>
+  <script id="bad-browser">
+  	<div id="other-browsers" class="clickable">
+  		<a href="http://browsehappy.com/">
+  			<img src="public/img/Unsupported.png" alt="get a supported browser" />
+  		</a>
   	</div>
   </script>
   

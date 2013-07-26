@@ -80,11 +80,13 @@ Colors.initialize = {
 		
 		var $intro = $('#intro'),
 			$triNav = $('#tri-nav'),
+			$socialNav = $('#social-nav'),
 			$rightSide = $('#rightSide'),
 			$leftSide = $('#leftSide');
 			
-		//hide the bottom nav immediately
+		//hide the bottom and top nav immediately
 		$triNav.slideUp(1);
+		//$socialNav.slideUp(1);
 			
 			
 		//hide the mouse stuff
@@ -109,10 +111,10 @@ Colors.initialize = {
 		    'public/img/triangles/12.png',
 		    'public/img/triangles/13.png',
 		    'public/img/triangles/14.png',
-		    'public/img/triangles/15.png'
+		    'public/img/triangles/15.png',
+		    'public/img/colorminutes_share.png'
 		]);
 
-		
 		
 		
 		$('#fullScreen').click(function(e){
@@ -187,6 +189,7 @@ Colors.initialize = {
 				var docWidth = $(window).width(),
 				docHeight = $(window).height(),
 				bottomThreshold = docHeight * .9,
+				topThreshold = docHeight * .1,
 				rightThreshold = docWidth * .8,
 				leftThreshold = docWidth * .2;
 				
@@ -218,6 +221,17 @@ Colors.initialize = {
 				}else{
 					if($triNav.hasClass('up')){
 						$triNav.removeClass('up').slideUp('fast');
+					}
+				}
+				
+				//for the top social nav
+				if(e.pageY < topThreshold){
+					if(!$socialNav.hasClass('open')){
+						$socialNav.addClass('open');
+					}
+				}else{
+					if($socialNav.hasClass('open')){
+						$socialNav.removeClass('open');
 					}
 				}
 				
@@ -262,6 +276,7 @@ Colors.initialize = {
 	    app.run();
 	},
 	noFullScreen:function(){
-		
+		$main.html(_.template($('#bad-browser').html()));
+		var $intro = $('#intro');
 	}
 }
