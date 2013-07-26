@@ -26,10 +26,14 @@ a{
 	height:inherit;
 	overflow: hidden;
 }
+.clickable{
+	cursor: pointer;
+}
+
 
 #intro{
-	@divWidth:300px;
-	@divHeight:100px;
+	@divWidth:166px;
+	@divHeight:174px;
 	width:@divWidth;
 	height: @divHeight;
 	text-align: center;
@@ -53,12 +57,27 @@ a{
 	p{
 		margin-top: -3px;
 	}
-	.clickable{
-		cursor: pointer;
+	
+	
+	#fullScreen{
+		padding:0;
+		width:@divWidth;
+		height:@divHeight;
+		
+		background-image:url('../img/landing_page_type.png');
+		img{
+			.make-transition;
+			margin-top: 60px;
+			//.rotate(270deg);
+		}
+		&:hover{
+			img{
+				.make-transition;
+				.rotate(-90deg);
+			}
+		}
 	}
 }
-
-
 
 .sidebar{
 	height:100%;
@@ -114,16 +133,55 @@ a{
 		}	
 	}
 }
+@socialNavHeight: 47px;
+#top-nav{
+	position: fixed;
+	top:0;
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	#social-nav{
+		list-style-type: none;
+		padding:0;
+		margin:0;
+		margin-left: auto;
+		margin-right:auto;
+		width:165px;
+		position:relative;
+		top: -@socialNavHeight;
+		.make-transition(0.2s);
+		&.open{
+			top:0;
+			.make-transition(0.2s);
+		}
+		
+		& .top-tri{
+			background-image:url('../img/colorminutes_share.png');
+			width:55px;
+			height:@socialNavHeight;
+			float:left;
+			padding:0;
+			margin:0;
+			cursor: pointer;
+		}
+		& #twitter{
+			background-position:0px 0px;
+		}
+		& #facebook{
+			background-position:(-55px) 0px;
+		}
+		& #google-plus{
+			background-position:(2 * -55px) 0px;
+		}
+	}
+}
 
 
-
-// helper class, will never show up in resulting css
-// will be called as long the index is above 0
 .loopingClass (@index) when (@index > 0) {
 
 	// create the actual css selector, example will result in
 	// .myclass_30, .myclass_28, .... , .myclass_1
-	(~"#tri@{index}") {
+	#tri@{index} {
 		// your resulting css
 		//my-property: -@index px;
 		background-position:((@index - 1) * -@tri-nav-size) 0px;
@@ -138,6 +196,19 @@ a{
 
 // "call" the loopingClass the first time with highest value
 .loopingClass (@iterations);
+
+#other-browsers{
+	@divWidth:614px;
+	@divHeight:16px;
+	width:@divWidth;
+	height: @divHeight;
+	text-align: center;
+	position: absolute;
+	top:50%;
+	left:50%;
+	margin-top: -(@divHeight/2);
+	margin-left: -(@divWidth/2);
+}
 
 
 
