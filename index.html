@@ -26,6 +26,9 @@
   <script>window._ || document.write('<script src="public/js/libs/underscore.min.js"><\/script>')</script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js"></script>
   <script>window.Sammy || document.write('<script src="public/js/libs/sammy.min.js"><\/script>')</script>
+  
+  <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+  
   <script src="public/js/app-ck.js"></script>
 
   <script>
@@ -46,9 +49,11 @@
 	<div id="rightSide" class="sidebar next tri-color2" data-direction="next"></div>
 	<div id="top-nav">
 		<ul id="social-nav">
-			<li id="twitter" class="top-tri" data-id="twitter"></li>
-			<li id="facebook" class="top-tri" data-id="facebook"></li>
-			<li id="google-plus" class="top-tri" data-id="google-plus"></li>
+			<a href="https://twitter.com/intent/tweet?text=Checkout%20ColorMinutes%20http://colorminutes.com&related=colorminutes"><li id="twitter" class="top-tri" data-id="twitter"></li></a>
+			<a href="http://www.facebook.com/sharer.php?u=http://colorminutes.com" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=400');return false;"><li id="facebook" class="top-tri" data-id="facebook"></li></a>
+			<a href="https://plus.google.com/share?url=http://colorminutes.com" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><li id="google-plus" class="top-tri" data-id="google-plus"></li></a>
 		</ul>
 	</div>
 	<div id="bottom-nav">
