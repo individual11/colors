@@ -134,6 +134,10 @@ Colors.initialize = {
 					$triNav.removeClass('up').slideUp(1);
 				}
 				
+				if($socialNav.hasClass('open')){
+					$socialNav.removeClass('open');
+				}
+				
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
 				isFullScreen = false;
