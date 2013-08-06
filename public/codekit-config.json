@@ -2,16 +2,16 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8317",
   "files" : {
-    "\/js\/colors.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/img\/triangles\/10.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/colors.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/colors-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "initialSize" : 5961,
+      "fileType" : 8192
     },
     "\/less\/utils.less" : {
       "ieCompatibility" : 1,
@@ -166,17 +166,6 @@
       "initialSize" : 4416,
       "fileType" : 8192
     },
-    "\/img\/triangles\/12.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/12.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/12.png",
-      "initialSize" : 6304,
-      "fileType" : 8192
-    },
     "\/less\/font.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/font.less",
@@ -193,6 +182,17 @@
       "outputStyle" : 1,
       "debugStyle" : 0,
       "strictMath" : 0
+    },
+    "\/img\/triangles\/12.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/12.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/12.png",
+      "initialSize" : 6304,
+      "fileType" : 8192
     },
     "\/js\/libs\/jquery.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -388,6 +388,17 @@
       "initialSize" : 13176,
       "fileType" : 8192
     },
+    "\/js\/colors.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/colors.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/colors-ck.js",
+      "fileType" : 64
+    },
     "\/img\/triangles\/8.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -397,17 +408,6 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/triangles\/8.png",
       "initialSize" : 5378,
-      "fileType" : 8192
-    },
-    "\/img\/triangles\/15.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/15.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/15.png",
-      "initialSize" : 6468,
       "fileType" : 8192
     },
     "\/js\/plugins\/jquery.fullscreen-min.js" : {
@@ -509,15 +509,15 @@
       "initialSize" : 4147,
       "fileType" : 8192
     },
-    "\/img\/triangles\/10.png" : {
+    "\/img\/triangles\/15.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "inputAbbreviatedPath" : "\/img\/triangles\/15.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
-      "initialSize" : 5961,
+      "outputAbbreviatedPath" : "\/img\/triangles\/15.png",
+      "initialSize" : 6468,
       "fileType" : 8192
     }
   },
