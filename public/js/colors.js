@@ -82,7 +82,8 @@ Colors.initialize = {
 			$triNav = $('#tri-nav'),
 			$socialNav = $('#social-nav'),
 			$rightSide = $('#rightSide'),
-			$leftSide = $('#leftSide');
+			$leftSide = $('#leftSide'),
+			$popup = $('#popup');
 			
 		//hide the bottom and top nav immediately
 		$triNav.slideUp(1);
@@ -144,8 +145,12 @@ Colors.initialize = {
 				app.setLocation('/#');
 				$('.sidebar').hide();//fixes a bug with body-width
 			}else{
+				var insurePlay = setTimeout(function(){
+														$playa.jPlayer("play");
+													}, 1000);
 				$intro.fadeOut('fast', function(){
 					$playa.jPlayer("play");
+					clearTimeout(insurePlay)
 				});
 				$htmlBody.addClass(String("color" + Colors.position));
 				isFullScreen = true;
@@ -186,6 +191,7 @@ Colors.initialize = {
 		$('.bottom-tri').click(function(e){
 			Colors.core.changeTrack($(this).data('id'));
 		});
+	
 	
 		//checking for mousemovement
 		$(document).mousemove(function(e){
