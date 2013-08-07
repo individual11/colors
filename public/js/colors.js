@@ -8,7 +8,7 @@ Colors.core = {
 	publicPath:(window.location.hostname == 'github.io')? 'colors/public/':'public/',
 	changeTrack:function(trackNumber){
 		if(Colors.position != trackNumber){
-			app.setLocation('#/track/'+trackNumber);
+			app.setLocation(Colors.core.root + '#/track/'+trackNumber);
 		}
 	},
 	nextTrack:function(){
@@ -144,7 +144,7 @@ Colors.initialize = {
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
 				isFullScreen = false;
-				app.setLocation('/#');
+				app.setLocation(Colors.core.root + '#');
 				$('.sidebar').hide();//fixes a bug with body-width
 			}else{
 				var insurePlay = setTimeout(function(){
