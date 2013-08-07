@@ -1,3 +1,5 @@
+console.log('test test');
+
 //main object
 var Colors = Colors ||{};
 Colors.position = 1;
