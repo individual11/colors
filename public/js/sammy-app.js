@@ -30,5 +30,6 @@ var app = Sammy('#main', function(){
      
      this.get("/", function(context){
 	    //console.log('meh'); 
+	    console.log(context);
      });
 });
