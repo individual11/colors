@@ -12,6 +12,8 @@ var app = Sammy('#main', function(){
 			
 			Colors.position = currentPosition;
 			
+			console.log('you getting here? - 1');
+			
 			//change the song
 			$playa.jPlayer("setMedia", {
 	            mp3: Colors.core.root + "public/music/" + Colors.position + ".mp3"
