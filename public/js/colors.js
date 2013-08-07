@@ -4,6 +4,8 @@ Colors.position = 1;
 Colors.length = 15;
 
 Colors.core = {
+	root:(window.location.hostname == 'github.io')? '/colors/':'/',
+	publicPath:(window.location.hostname == 'github.io')? 'colors/public/':'public/',
 	changeTrack:function(trackNumber){
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
