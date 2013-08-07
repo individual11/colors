@@ -2,15 +2,15 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8317",
   "files" : {
-    "\/img\/landing_page_triangle.png" : {
+    "\/img\/triangles\/6.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/landing_page_triangle.png",
+      "inputAbbreviatedPath" : "\/img\/triangles\/6.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/landing_page_triangle.png",
-      "initialSize" : 13176,
+      "outputAbbreviatedPath" : "\/img\/triangles\/6.png",
+      "initialSize" : 4949,
       "fileType" : 8192
     },
     "\/less\/utils.less" : {
@@ -113,15 +113,6 @@
       "initialSize" : 118509,
       "fileType" : 8192
     },
-    "\/css\/core.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/core.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/img\/triangles\/3.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -132,6 +123,15 @@
       "outputAbbreviatedPath" : "\/img\/triangles\/3.png",
       "initialSize" : 4125,
       "fileType" : 8192
+    },
+    "\/css\/core.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/core.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/js\/plugins\/jquery.jplayer.min.js" : {
       "ignoreWasSetByUser" : 1,
@@ -155,28 +155,6 @@
       "outputAbbreviatedPath" : "\/js\/sammy-app-ck.js",
       "fileType" : 64
     },
-    "\/img\/triangles\/2.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/2.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/2.png",
-      "initialSize" : 4416,
-      "fileType" : 8192
-    },
-    "\/img\/triangles\/12.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/12.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/12.png",
-      "initialSize" : 6304,
-      "fileType" : 8192
-    },
     "\/less\/font.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/font.less",
@@ -193,6 +171,28 @@
       "outputStyle" : 1,
       "debugStyle" : 0,
       "strictMath" : 0
+    },
+    "\/img\/triangles\/12.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/12.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/12.png",
+      "initialSize" : 6304,
+      "fileType" : 8192
+    },
+    "\/img\/triangles\/2.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/2.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/2.png",
+      "initialSize" : 4416,
+      "fileType" : 8192
     },
     "\/js\/libs\/jquery.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -388,17 +388,6 @@
       "outputAbbreviatedPath" : "\/js\/app-ck.js",
       "fileType" : 64
     },
-    "\/img\/intro-final.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/intro-final.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/intro-final.png",
-      "initialSize" : 4147,
-      "fileType" : 8192
-    },
     "\/js\/colors.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -408,6 +397,39 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/colors-ck.js",
+      "fileType" : 64
+    },
+    "\/img\/triangles\/8.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/8.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/8.png",
+      "initialSize" : 5378,
+      "fileType" : 8192
+    },
+    "\/img\/triangles\/15.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/15.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/15.png",
+      "initialSize" : 6468,
+      "fileType" : 8192
+    },
+    "\/js\/plugins\/jquery.fullscreen-min.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/plugins\/jquery.fullscreen-min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/plugins\/jquery.fullscreen-min-ck.js",
       "fileType" : 64
     },
     "\/js\/plugins\/swipe.js" : {
@@ -421,17 +443,6 @@
       "outputAbbreviatedPath" : "\/js\/plugins\/swipe-ck.js",
       "fileType" : 64
     },
-    "\/js\/plugins\/jquery.fullscreen-min.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/plugins\/jquery.fullscreen-min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/plugins\/jquery.fullscreen-min-ck.js",
-      "fileType" : 64
-    },
     "\/js\/variables.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -443,15 +454,15 @@
       "outputAbbreviatedPath" : "\/js\/variables-ck.js",
       "fileType" : 64
     },
-    "\/img\/triangles\/7.png" : {
+    "\/img\/intro-final.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/7.png",
+      "inputAbbreviatedPath" : "\/img\/intro-final.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/7.png",
-      "initialSize" : 5017,
+      "outputAbbreviatedPath" : "\/img\/intro-final.png",
+      "initialSize" : 4147,
       "fileType" : 8192
     },
     "\/img\/triangles\/10.png" : {
@@ -463,17 +474,6 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
       "initialSize" : 5961,
-      "fileType" : 8192
-    },
-    "\/img\/colorminutes_share.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/colorminutes_share.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/colorminutes_share.png",
-      "initialSize" : 33856,
       "fileType" : 8192
     },
     "\/js\/libs\/sammy.min.js" : {
@@ -498,37 +498,37 @@
       "initialSize" : 42101,
       "fileType" : 8192
     },
-    "\/img\/triangles\/6.png" : {
+    "\/img\/triangles\/7.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/6.png",
+      "inputAbbreviatedPath" : "\/img\/triangles\/7.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/6.png",
-      "initialSize" : 4949,
+      "outputAbbreviatedPath" : "\/img\/triangles\/7.png",
+      "initialSize" : 5017,
       "fileType" : 8192
     },
-    "\/img\/triangles\/8.png" : {
+    "\/img\/colorminutes_share.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/8.png",
+      "inputAbbreviatedPath" : "\/img\/colorminutes_share.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/8.png",
-      "initialSize" : 5378,
+      "outputAbbreviatedPath" : "\/img\/colorminutes_share.png",
+      "initialSize" : 33856,
       "fileType" : 8192
     },
-    "\/img\/triangles\/15.png" : {
+    "\/img\/landing_page_triangle.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/15.png",
+      "inputAbbreviatedPath" : "\/img\/landing_page_triangle.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/15.png",
-      "initialSize" : 6468,
+      "outputAbbreviatedPath" : "\/img\/landing_page_triangle.png",
+      "initialSize" : 13176,
       "fileType" : 8192
     }
   },

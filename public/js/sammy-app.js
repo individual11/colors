@@ -24,6 +24,7 @@ var app = Sammy('#main', function(){
 				who.addClass(to);
 			}
 		}else{
+			console.log(Colors.core.root);
 			app.setLocation(Colors.core.root + '#');
 		}
      });
