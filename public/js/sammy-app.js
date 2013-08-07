@@ -1,5 +1,5 @@
 var app = Sammy('#main', function(){
-	this.get('/#/track/:trackNumber', function(context) {
+	this.get(Colors.core.root + '/#/track/:trackNumber', function(context) {
 		var currentPosition = Number(this.params['trackNumber']);
 		if((isDesktop && isFullScreen || isTouch) && currentPosition != NaN){
 	        var currentPrev = (Colors.position > 1)? Colors.position-1:Colors.length,
@@ -24,7 +24,7 @@ var app = Sammy('#main', function(){
 				who.addClass(to);
 			}
 		}else{
-			app.setLocation('/#');
+			app.setLocation(Colors.core.root + '#');
 		}
      });
      
