@@ -7,7 +7,7 @@ Colors.core = {
 	root:(window.location.hostname == 'github.io')? '/colors/':'/',
 	changeTrack:function(trackNumber){
 		if(Colors.position != trackNumber){
-			app.setLocation(Colors.core.root + '#/track/'+trackNumber);
+			app.setLocation('#/track/'+trackNumber);
 		}
 	},
 	nextTrack:function(){
