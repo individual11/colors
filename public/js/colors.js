@@ -1,11 +1,12 @@
+console.log('test test');
+
 //main object
 var Colors = Colors ||{};
 Colors.position = 1;
 Colors.length = 15;
 
 Colors.core = {
-	root:(window.location.hostname == 'github.io')? '/colors/':'/',
-	publicPath:(window.location.hostname == 'github.io')? 'colors/public/':'public/',
+	root:(window.location.hostname == 'github.io')? 'colors/':'',
 	changeTrack:function(trackNumber){
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
@@ -144,7 +145,7 @@ Colors.initialize = {
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
 				isFullScreen = false;
-				app.setLocation('/#');
+				app.setLocation('#');
 				$('.sidebar').hide();//fixes a bug with body-width
 			}else{
 				var insurePlay = setTimeout(function(){

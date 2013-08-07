@@ -1,5 +1,5 @@
 var app = Sammy('#main', function(){
-	this.get(Colors.core.root + '/#/track/:trackNumber', function(context) {
+	this.get('#/track/:trackNumber', function(context) {
 		var currentPosition = Number(this.params['trackNumber']);
 		if((isDesktop && isFullScreen || isTouch) && currentPosition != NaN){
 	        var currentPrev = (Colors.position > 1)? Colors.position-1:Colors.length,
@@ -12,9 +12,11 @@ var app = Sammy('#main', function(){
 			
 			Colors.position = currentPosition;
 			
+			console.log('you getting here? - 1');
+			
 			//change the song
 			$playa.jPlayer("setMedia", {
-	            mp3: "public/music/" + Colors.position + ".mp3"
+	            mp3: Colors.core.root + "public/music/" + Colors.position + ".mp3"
 	        }).jPlayer("play");
 			
 			function changeColor(who, from, to){
@@ -24,11 +26,13 @@ var app = Sammy('#main', function(){
 				who.addClass(to);
 			}
 		}else{
-			app.setLocation(Colors.core.root + '#');
+			//console.log(Colors.core.root);
+			app.setLocation('#');
 		}
      });
      
      this.get("/", function(context){
 	    //console.log('meh'); 
+	    //console.log(context);
      });
 });

@@ -6,3 +6,4 @@ var $playa = $("#playa"),
 var isDesktop = false,
 	isTouch = false,
 	isFullScreen = false;
+
