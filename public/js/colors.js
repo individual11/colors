@@ -1,5 +1,3 @@
-console.log('test test');
-
 //main object
 var Colors = Colors ||{};
 Colors.position = 1;
@@ -33,7 +31,13 @@ Colors.utils = {
 	    $(arrayOfImages).each(function(){
 	    	(new Image()).src = this;
 	    });
-    }
+    },
+	changeColor:function(who, from, to){
+		console.log('ok');
+		if(who.hasClass(from)) who.removeClass(from);
+		
+		who.addClass(to);
+	}
 }
 			  
 Colors.initialize = {
