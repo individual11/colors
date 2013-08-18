@@ -2,16 +2,16 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8317",
   "files" : {
-    "\/js\/plugins\/swipe.js" : {
+    "\/img\/colorminutes_share.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/plugins\/swipe.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/plugins\/swipe-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/img\/colorminutes_share.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/colorminutes_share.png",
+      "initialSize" : 33856,
+      "fileType" : 8192
     },
     "\/less\/utils.less" : {
       "ieCompatibility" : 1,
@@ -166,6 +166,17 @@
       "initialSize" : 4416,
       "fileType" : 8192
     },
+    "\/img\/triangles\/12.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/12.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/12.png",
+      "initialSize" : 6304,
+      "fileType" : 8192
+    },
     "\/less\/font.less" : {
       "ieCompatibility" : 1,
       "inputAbbreviatedPath" : "\/less\/font.less",
@@ -182,17 +193,6 @@
       "outputStyle" : 1,
       "debugStyle" : 0,
       "strictMath" : 0
-    },
-    "\/img\/triangles\/12.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/12.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/12.png",
-      "initialSize" : 6304,
-      "fileType" : 8192
     },
     "\/js\/libs\/jquery.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -333,17 +333,6 @@
       "debugStyle" : 0,
       "strictMath" : 0
     },
-    "\/img\/favicon.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/favicon.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/favicon.png",
-      "initialSize" : 1345,
-      "fileType" : 8192
-    },
     "\/img\/triangles\/14.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -353,6 +342,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/triangles\/14.png",
       "initialSize" : 6899,
+      "fileType" : 8192
+    },
+    "\/img\/favicon.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/favicon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/favicon.png",
+      "initialSize" : 1345,
       "fileType" : 8192
     },
     "\/js\/sammy-app-ck.js" : {
@@ -399,17 +399,6 @@
       "initialSize" : 13176,
       "fileType" : 8192
     },
-    "\/js\/colors.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/colors.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/colors-ck.js",
-      "fileType" : 64
-    },
     "\/img\/triangles\/8.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -421,26 +410,37 @@
       "initialSize" : 5378,
       "fileType" : 8192
     },
-    "\/js\/variables.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/variables.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/variables-ck.js",
-      "fileType" : 64
-    },
-    "\/img\/intro-final.png" : {
+    "\/img\/triangles\/15.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/intro-final.png",
+      "inputAbbreviatedPath" : "\/img\/triangles\/15.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/intro-final.png",
-      "initialSize" : 4147,
+      "outputAbbreviatedPath" : "\/img\/triangles\/15.png",
+      "initialSize" : 6468,
+      "fileType" : 8192
+    },
+    "\/js\/plugins\/swipe.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/plugins\/swipe.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/plugins\/swipe-ck.js",
+      "fileType" : 64
+    },
+    "\/img\/triangles\/10.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "initialSize" : 5961,
       "fileType" : 8192
     },
     "\/img\/triangles\/7.png" : {
@@ -454,27 +454,27 @@
       "initialSize" : 5017,
       "fileType" : 8192
     },
-    "\/img\/colorminutes_share.png" : {
+    "\/img\/intro-final.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/colorminutes_share.png",
+      "inputAbbreviatedPath" : "\/img\/intro-final.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/colorminutes_share.png",
-      "initialSize" : 33856,
+      "outputAbbreviatedPath" : "\/img\/intro-final.png",
+      "initialSize" : 4147,
       "fileType" : 8192
     },
-    "\/img\/triangles\/10.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/js\/colors.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/10.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
-      "initialSize" : 5961,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/js\/colors.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/colors-ck.js",
+      "fileType" : 64
     },
     "\/js\/libs\/sammy.min.js" : {
       "ignoreWasSetByUser" : 0,
@@ -509,17 +509,6 @@
       "initialSize" : 4949,
       "fileType" : 8192
     },
-    "\/img\/triangles\/15.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/15.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/15.png",
-      "initialSize" : 6468,
-      "fileType" : 8192
-    },
     "\/js\/plugins\/jquery.fullscreen-min.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -529,6 +518,17 @@
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/plugins\/jquery.fullscreen-min-ck.js",
+      "fileType" : 64
+    },
+    "\/js\/variables.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/variables.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/variables-ck.js",
       "fileType" : 64
     }
   },
