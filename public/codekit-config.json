@@ -2,16 +2,16 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8317",
   "files" : {
-    "\/img\/intro-final.png" : {
+    "\/js\/plugins\/swipe.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/intro-final.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/intro-final.png",
-      "initialSize" : 4147,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/js\/plugins\/swipe.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/plugins\/swipe-ck.js",
+      "fileType" : 64
     },
     "\/less\/utils.less" : {
       "ieCompatibility" : 1,
@@ -399,16 +399,16 @@
       "initialSize" : 13176,
       "fileType" : 8192
     },
-    "\/js\/colors.js" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/img\/triangles\/8.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/colors.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/colors-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/img\/triangles\/8.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/triangles\/8.png",
+      "initialSize" : 5378,
+      "fileType" : 8192
     },
     "\/img\/triangles\/15.png" : {
       "ignoreWasSetByUser" : 0,
@@ -465,15 +465,15 @@
       "initialSize" : 33856,
       "fileType" : 8192
     },
-    "\/img\/triangles\/10.png" : {
+    "\/img\/intro-final.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "inputAbbreviatedPath" : "\/img\/intro-final.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
-      "initialSize" : 5961,
+      "outputAbbreviatedPath" : "\/img\/intro-final.png",
+      "initialSize" : 4147,
       "fileType" : 8192
     },
     "\/js\/libs\/sammy.min.js" : {
@@ -509,26 +509,26 @@
       "initialSize" : 4949,
       "fileType" : 8192
     },
-    "\/img\/triangles\/8.png" : {
+    "\/img\/triangles\/10.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/triangles\/8.png",
+      "inputAbbreviatedPath" : "\/img\/triangles\/10.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/triangles\/8.png",
-      "initialSize" : 5378,
+      "outputAbbreviatedPath" : "\/img\/triangles\/10.png",
+      "initialSize" : 5961,
       "fileType" : 8192
     },
-    "\/js\/plugins\/swipe.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/js\/colors.js" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/plugins\/swipe.js",
+      "inputAbbreviatedPath" : "\/js\/colors.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/plugins\/swipe-ck.js",
+      "outputAbbreviatedPath" : "\/js\/colors-ck.js",
       "fileType" : 64
     }
   },

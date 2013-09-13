@@ -1,3 +1,4 @@
 *.DS_Store
 codekit-config.json
+public/codekit-config.json
 
