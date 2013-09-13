@@ -1,0 +1,20 @@
+{
+  "name": "build",
+  "version": "0.0.0",
+  "description": "A website for showcasing the colorminutes videos. [Check them out here.](http://www.youtube.com/user/mpressof/videos?flow=grid&view=0)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/individual11/colors.git"
+  },
+  "author": "david@individual11.com",
+  "readmeFilename": "README.md",
+  "gitHead": "3217784e583f421e03e6109a51a786a1d6ce6c5d",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": ">= 0.2.x",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-manifest": "~0.4.0"
+  }
+}
