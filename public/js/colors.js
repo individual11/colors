@@ -46,22 +46,32 @@ Colors.initialize = {
 		
 		$main.html(_.template($('#mobile-standard').html()));
 		var $intro = $('#intro');
+
+		if (("standalone" in window.navigator) && !window.navigator.standalone){
+ 			$('body').css('min-height', $(window).height() + 60);
 		
-		var fadeInTimeout = setTimeout(init, 1500);
+			setTimeout(function() { window.scrollTo(0, 1) }, 100);
+		}
+
+		
+		
+
 		function init(){
 			$intro.fadeOut('fast', function(){
 				$playa.jPlayer("play");
 			});
 			$htmlBody.addClass(String("color" + Colors.position));
 							
-			/*
-		http://stackoverflow.com/questions/2701139/standalone-jquery-touch-method
-		$('.swipe').swipe({
-		 swipeLeft: function() { $('#someDiv').fadeIn() },
-		 swipeRight: function() { $('#someDiv').fadeOut() },
-		})
-		
-		*/
+			//detect swipes
+    		$("body").touchwipe({
+			     wipeLeft: i11.touch.swipeLeft ,
+			     wipeRight: i11.touch.swipeRight,
+			     wipeUp: function() { alert("up"); },
+			     wipeDown: function() { alert("down"); },
+			     min_move_x: 20,
+			     min_move_y: 20,
+			     preventDefaultEvents: true
+			});
 		}
 		
 		//AUDIO PART
