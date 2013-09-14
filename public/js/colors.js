@@ -54,7 +54,9 @@ Colors.initialize = {
 		}
 
 		
-		
+		$('#fullScreen').click(function(e){
+			init();
+		});
 
 		function init(){
 			$intro.fadeOut('fast', function(){
