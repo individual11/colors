@@ -3,11 +3,9 @@ var app = Sammy('#main', function(){
 	this.get('/#/track/:trackNumber', function(context) {
 		console.log("here 1");
 		var currentPosition = Number(this.params['trackNumber']);
-		if((isDesktop && isFullScreen || isTouch) && currentPosition != NaN){
+		if(((isDesktop && isFullScreen) || isTouch) && currentPosition != NaN){
 	        var currentPrev = (Colors.position > 1)? Colors.position-1:Colors.length,
 			currentNext = (Colors.position < Colors.length)? Colors.position+1:1;
-			
-			console.log(typeof changeColor);
 			
 			//set the colors accordingly
 			Colors.utils.changeColor($htmlBody, String("color" + Colors.position), String("color" + currentPosition));
@@ -29,9 +27,14 @@ var app = Sammy('#main', function(){
 			app.setLocation('#');
 		}
      });
-     this.get("/#/:anything", function(context){
-     	console.log(this.params['anything']);
-     });
+
+this.notFound = function(){
+	    console.log("bad path");
+	}
+     this.get(/.*/, function() { 
+		  console.log("HERE HERE");
+	});
+
      this.get("/", function(context){
 	    //console.log('meh'); 
 	    console.log(context);
