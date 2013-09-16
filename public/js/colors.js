@@ -33,7 +33,6 @@ Colors.utils = {
 	    });
     },
 	changeColor:function(who, from, to){
-		console.log('ok');
 		if(who.hasClass(from)) who.removeClass(from);
 		
 		who.addClass(to);
@@ -45,28 +44,51 @@ Colors.initialize = {
 		isTouch = true;
 		
 		$main.html(_.template($('#mobile-standard').html()));
+
 		var $intro = $('#intro');
 		
-		var fadeInTimeout = setTimeout(init, 1500);
+		$('#fullScreen').click(function(e){
+			init();
+		});
+
+		//preload images		
+		Colors.utils.preload([
+			'public/img/triangles/bottom_nav.png',
+		    'public/img/colorminutes_share.png'
+		]);
+
 		function init(){
 			$intro.fadeOut('fast', function(){
 				$playa.jPlayer("play");
+				console.log("OK");
 			});
 			$htmlBody.addClass(String("color" + Colors.position));
-							
-			/*
-		http://stackoverflow.com/questions/2701139/standalone-jquery-touch-method
-		$('.swipe').swipe({
-		 swipeLeft: function() { $('#someDiv').fadeIn() },
-		 swipeRight: function() { $('#someDiv').fadeOut() },
-		})
-		
-		*/
+			
+			var insurePlay = setTimeout(function(){
+				$playa.jPlayer("play");
+			}, 1000);
+
+			$intro.fadeOut('fast', function(){
+				$playa.jPlayer("play");
+				clearTimeout(insurePlay)
+			});
+
+			//detect swipes
+    		$("body").touchwipe({
+			     wipeLeft: Colors.core.nextTrack,
+			     wipeRight: Colors.core.prevTrack,
+			     wipeUp: function() { alert("up"); },
+			     wipeDown: function() { alert("down"); },
+			     min_move_x: 20,
+			     min_move_y: 20,
+			     preventDefaultEvents: true
+			});
 		}
 		
 		//AUDIO PART
 		$playa.jPlayer({
 	        ready: function(event) {
+	        	console.log("said it was good");	
 	            $(this).jPlayer("setMedia", {
 	                mp3: "public/music/" + Colors.position + ".mp3"
 	            });

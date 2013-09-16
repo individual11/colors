@@ -1,6 +1,7 @@
 Sammy.debug = true;
 var app = Sammy('#main', function(){
 	this.get('/#/track/:trackNumber', function(context) {
+		console.log("here 1");
 		var currentPosition = Number(this.params['trackNumber']);
 		if((isDesktop && isFullScreen || isTouch) && currentPosition != NaN){
 	        var currentPrev = (Colors.position > 1)? Colors.position-1:Colors.length,
@@ -28,7 +29,9 @@ var app = Sammy('#main', function(){
 			app.setLocation('#');
 		}
      });
-     
+     this.get("/#/:anything", function(context){
+     	console.log(this.params['anything']);
+     });
      this.get("/", function(context){
 	    //console.log('meh'); 
 	    console.log(context);

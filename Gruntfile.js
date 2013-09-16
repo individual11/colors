@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       },
     target1:{
        files:{
-        //'build/foo.min.js':['src/foo.js']
+       		'public/js/app-ck.js':['public/js/plugins/jquery.jplayer.min.js', 'public/js/variables.js', 'public/js/colors.js', 'public/js/sammy-app.js', 'public/js/app.js']
         }
          }
     },
@@ -18,14 +18,6 @@ module.exports = function(grunt) {
     	options: {
 	        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 	      },
-	  development: {
-	    options: {
-	      paths: ["public/css"]
-	    },
-	    files: {
-	      "public/css/core.css": "public/less/core.less"
-	    }
-	  },
 	  production: {
 	    options: {
 	      paths: ["public/css"],
@@ -43,7 +35,6 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   // Default task(s).
   grunt.registerTask('default', ['uglify', 'less']);
