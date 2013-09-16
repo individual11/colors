@@ -33,7 +33,6 @@ Colors.utils = {
 	    });
     },
 	changeColor:function(who, from, to){
-		console.log('ok');
 		if(who.hasClass(from)) who.removeClass(from);
 		
 		who.addClass(to);
@@ -45,29 +44,39 @@ Colors.initialize = {
 		isTouch = true;
 		
 		$main.html(_.template($('#mobile-standard').html()));
+
 		var $intro = $('#intro');
-
-		if (("standalone" in window.navigator) && !window.navigator.standalone){
- 			$('body').css('min-height', $(window).height() + 60);
-		
-			setTimeout(function() { window.scrollTo(0, 1) }, 100);
-		}
-
 		
 		$('#fullScreen').click(function(e){
 			init();
 		});
 
+		//preload images		
+		Colors.utils.preload([
+			'public/img/triangles/bottom_nav.png',
+		    'public/img/colorminutes_share.png'
+		]);
+
 		function init(){
 			$intro.fadeOut('fast', function(){
 				$playa.jPlayer("play");
+				console.log("OK");
 			});
 			$htmlBody.addClass(String("color" + Colors.position));
-							
+			
+			var insurePlay = setTimeout(function(){
+				$playa.jPlayer("play");
+			}, 1000);
+
+			$intro.fadeOut('fast', function(){
+				$playa.jPlayer("play");
+				clearTimeout(insurePlay)
+			});
+
 			//detect swipes
     		$("body").touchwipe({
-			     wipeLeft: i11.touch.swipeLeft ,
-			     wipeRight: i11.touch.swipeRight,
+			     wipeLeft: Colors.core.nextTrack,
+			     wipeRight: Colors.core.prevTrack,
 			     wipeUp: function() { alert("up"); },
 			     wipeDown: function() { alert("down"); },
 			     min_move_x: 20,
@@ -79,6 +88,7 @@ Colors.initialize = {
 		//AUDIO PART
 		$playa.jPlayer({
 	        ready: function(event) {
+	        	console.log("said it was good");	
 	            $(this).jPlayer("setMedia", {
 	                mp3: "public/music/" + Colors.position + ".mp3"
 	            });
