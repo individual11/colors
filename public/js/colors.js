@@ -6,7 +6,7 @@ Colors.length = 15;
 Colors.core = {
 	root:(window.location.hostname == 'github.io')? 'colors/':'',
 	changeTrack:function(trackNumber){
-		console.log(trackNumber);
+		console.log("changeTrack - " + trackNumber);
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
 		}
@@ -47,7 +47,9 @@ Colors.initialize = {
 		
 		$main.html(_.template($('#mobile-standard').html()));
 
-		var $intro = $('#intro');
+		var $intro = $('#intro'),
+			$triNav = $('#tri-nav'),
+			$socialNav = $('#social-nav');
 		
 		$('#fullScreen').click(function(e){
 			init();
@@ -59,7 +61,12 @@ Colors.initialize = {
 		    'public/img/colorminutes_share.png'
 		]);
 
+		// if(!$triNav.hasClass('up')){
+		// 	$triNav.addClass('up').slideDown('fast');
+		// }
+
 		function init(){
+			$("#bottom-nav").css("width", "100%")
 			$intro.fadeOut('fast', function(){
 				$playa.jPlayer("play");
 				console.log("OK");
@@ -79,12 +86,19 @@ Colors.initialize = {
     		$("body").touchwipe({
 			     wipeLeft: Colors.core.nextTrack,
 			     wipeRight: Colors.core.prevTrack,
-			     wipeUp: function() { alert("up"); },
+			     wipeUp: function() { $triNav.addClass('up').slideDown('fast'); },
 			     wipeDown: function() { alert("down"); },
 			     min_move_x: 20,
 			     min_move_y: 20,
 			     preventDefaultEvents: true
 			});
+
+			//bototm nav clicks
+			$('.bottom-tri').click(function(e){
+				Colors.core.changeTrack($(this).data('id'));
+			});
+
+			app.run();
 		}
 		
 		//AUDIO PART
