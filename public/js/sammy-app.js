@@ -1,7 +1,6 @@
 Sammy.debug = true;
-var app = Sammy('#main', function(){
-	this.get('/#/track/:trackNumber', function(context) {
-		console.log("here 1");
+var app = $.sammy('#main', function(){
+	this.get('#/track/:trackNumber', function(context) {
 		var currentPosition = Number(this.params['trackNumber']);
 		if(((isDesktop && isFullScreen) || isTouch) && currentPosition != NaN){
 	        var currentPrev = (Colors.position > 1)? Colors.position-1:Colors.length,
@@ -14,8 +13,6 @@ var app = Sammy('#main', function(){
 			
 			Colors.position = currentPosition;
 			
-			console.log('you getting here? - 1');
-			
 			//change the song
 			$playa.jPlayer("setMedia", {
 	            mp3: Colors.core.root + "public/music/" + Colors.position + ".mp3"
@@ -27,13 +24,6 @@ var app = Sammy('#main', function(){
 			app.setLocation('#');
 		}
      });
-
-this.notFound = function(){
-	    console.log("bad path");
-	}
-     this.get(/.*/, function() { 
-		  console.log("HERE HERE");
-	});
 
      this.get("/", function(context){
 	    //console.log('meh'); 

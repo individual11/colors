@@ -14,8 +14,7 @@ module.exports = function(grunt) {
        								'public/js/plugins/jquery.jplayer.min.js', 
        								'public/js/variables.js',  
        								'public/js/colors.js',
-       								'public/js/sammy-app.js',
-       								'public/js/app.js']
+       								'public/js/app.js','public/js/sammy-app.js']
         	}
         }
     },
