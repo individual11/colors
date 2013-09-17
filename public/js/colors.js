@@ -6,7 +6,6 @@ Colors.length = 15;
 Colors.core = {
 	root:(window.location.hostname == 'github.io')? 'colors/':'',
 	changeTrack:function(trackNumber){
-		console.log("changeTrack - " + trackNumber);
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
 		}
@@ -95,6 +94,25 @@ Colors.initialize = {
 			$intro.fadeOut('fast', function(){
 				$playa.jPlayer("play");
 				clearTimeout(insurePlay)
+			});
+
+			$('body').on('tap', function(e, touch){
+				var w = document.width;
+				var tapZonePercent = .15;
+				var tapZoneW = w * tapZonePercent;
+				var x = touch.position.x;
+				if(x > w - tapZoneW){
+					Colors.core.nextTrack();
+				}else if(x < tapZoneW ){
+					Colors.core.prevTrack();
+				}else{
+					if($socialNav.hasClass('open')){
+						$socialNav.removeClass('open');
+					}
+					if($triNav.hasClass('up')){
+				 		$triNav.removeClass('up').slideUp('fast');
+				 	}
+				}
 			});
 
 			//detect swipes

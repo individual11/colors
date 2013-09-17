@@ -11,6 +11,7 @@ module.exports = function(grunt) {
        files:{
        		'public/js/app-ck.js':['public/js/plugins/jquery.fullscreen-min.js',
        								'public/js/plugins/jquery.touchwipe.min.js',
+       								'public/js/plugins/jquery.mobile-events.min.js',
        								'public/js/plugins/jquery.jplayer.min.js', 
        								'public/js/variables.js',  
        								'public/js/colors.js',
