@@ -50,6 +50,9 @@ Colors.initialize = {
 		var $intro = $('#intro'),
 			$triNav = $('#tri-nav'),
 			$socialNav = $('#social-nav');
+
+		//hide the bottom and top nav immediately
+		$triNav.slideUp(1);
 		
 		$('#fullScreen').click(function(e){
 			init();
@@ -61,15 +64,27 @@ Colors.initialize = {
 		    'public/img/colorminutes_share.png'
 		]);
 
-		// if(!$triNav.hasClass('up')){
-		// 	$triNav.addClass('up').slideDown('fast');
-		// }
+
+		function swipeUp(){
+			if($triNav.hasClass('up')){
+		 		$triNav.removeClass('up').slideUp('fast');
+		 	}else if(!$socialNav.hasClass('open')){
+		 		$socialNav.addClass('open');
+		 	}
+		}
+
+		function swipeDown(){
+			if($socialNav.hasClass('open')){
+				$socialNav.removeClass('open');
+			}else if(!$triNav.hasClass('up')){
+		 		$triNav.addClass('up').slideDown('fast');
+			}
+		}
 
 		function init(){
 			$("#bottom-nav").css("width", "100%")
 			$intro.fadeOut('fast', function(){
 				$playa.jPlayer("play");
-				console.log("OK");
 			});
 			$htmlBody.addClass(String("color" + Colors.position));
 			
@@ -86,8 +101,8 @@ Colors.initialize = {
     		$("body").touchwipe({
 			     wipeLeft: Colors.core.nextTrack,
 			     wipeRight: Colors.core.prevTrack,
-			     wipeUp: function() { $triNav.addClass('up').slideDown('fast'); },
-			     wipeDown: function() { alert("down"); },
+			     wipeUp: swipeUp,
+			     wipeDown: swipeDown,
 			     min_move_x: 20,
 			     min_move_y: 20,
 			     preventDefaultEvents: true
@@ -97,7 +112,7 @@ Colors.initialize = {
 			$('.bottom-tri').click(function(e){
 				Colors.core.changeTrack($(this).data('id'));
 			});
-
+			//gotta kick it off
 			app.run();
 		}
 		
