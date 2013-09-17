@@ -6,12 +6,14 @@ Colors.length = 15;
 Colors.core = {
 	root:(window.location.hostname == 'github.io')? 'colors/':'',
 	changeTrack:function(trackNumber){
+		console.log(trackNumber);
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
 		}
 	},
 	nextTrack:function(){
 		var currentPosition = Colors.position + 1;
+		console.log(currentPosition);
 		if(currentPosition > Colors.length){
 			currentPosition = 1;
 		}

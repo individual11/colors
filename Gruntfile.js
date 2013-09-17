@@ -9,9 +9,15 @@ module.exports = function(grunt) {
       },
     target1:{
        files:{
-       		'public/js/app-ck.js':['public/js/plugins/jquery.jplayer.min.js', 'public/js/variables.js', 'public/js/colors.js', 'public/js/sammy-app.js', 'public/js/app.js']
+       		'public/js/app-ck.js':['public/js/plugins/jquery.fullscreen-min.js',
+       								'public/js/plugins/jquery.touchwipe.min.js',
+       								'public/js/plugins/jquery.jplayer.min.js', 
+       								'public/js/variables.js',  
+       								'public/js/colors.js',
+       								'public/js/sammy-app.js',
+       								'public/js/app.js']
+        	}
         }
-         }
     },
     
     less: {
