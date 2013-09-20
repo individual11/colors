@@ -106,12 +106,22 @@ a{
 }
 @iterations: 15;
 @tri-nav-size: 41.6px;
+@tri-nav-mobile-size:40px;
 #bottom-nav{
 	position: fixed;
 	bottom:0;
 	margin-left: auto;
 	margin-right: auto;
 	width:100%;
+	&.mobile{
+		bottom:-70px;
+		.make-transition;
+		&.up{
+			.make-transition;
+			bottom:0px;
+		}	
+	}
+	
 	#tri-nav{
 		list-style-type: none;
 		padding: 0;
@@ -119,8 +129,8 @@ a{
 		margin-left: auto;
 		margin-right: auto;
 		width:@iterations * @tri-nav-size;
-		
-		
+		position: fixed;
+		bottom:0;
 		& .bottom-tri{
 			background-image:url('../img/triangles/bottom_nav.png');
 			width:@tri-nav-size;
@@ -129,8 +139,49 @@ a{
 			padding:0;
 			margin:0;
 			cursor: pointer;
-		}	
+		}
 	}
+	
+	#tri-nav-top{
+		list-style-type: none;
+		padding: 0;
+		margin:0;
+		margin-left: auto;
+		margin-right: auto;
+		width:7 * @tri-nav-mobile-size;
+		position: relative;
+		bottom:0px;
+		& .bottom-tri{
+			background-image:url('../img/bottom-nav-mobile.png');
+			width:@tri-nav-mobile-size;
+			height:35px;
+			float:left;
+			padding:0;
+			margin:0;
+			cursor: pointer;
+		}
+	}
+	#tri-nav-bottom{
+		list-style-type: none;
+		padding: 0;
+		margin:0;
+		margin-left: auto;
+		margin-right: auto;
+		width:8 * @tri-nav-mobile-size;
+		position: relative;
+		bottom:0;
+		& .bottom-tri{
+			background-image:url('../img/bottom-nav-mobile.png');
+			width:@tri-nav-mobile-size;
+			height:35px;
+			float:left;
+			padding:0;
+			margin:0;
+			cursor: pointer;
+		}
+	}
+	
+	
 }
 @socialNavHeight: 47px;
 #top-nav{
@@ -184,6 +235,12 @@ a{
 		// your resulting css
 		//my-property: -@index px;
 		background-position:((@index - 1) * -@tri-nav-size) 0px;
+	}
+	
+	#triM@{index} {
+		// your resulting css
+		//my-property: -@index px;
+		background-position:((@index - 1) * -@tri-nav-mobile-size) 0px;
 	}
 
 	// next iteration

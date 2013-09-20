@@ -47,11 +47,8 @@ Colors.initialize = {
 		$main.html(_.template($('#mobile-standard').html()));
 
 		var $intro = $('#intro'),
-			$triNav = $('#tri-nav'),
+			$triNav = $('#bottom-nav'),
 			$socialNav = $('#social-nav');
-
-		//hide the bottom and top nav immediately
-		$triNav.slideUp(1);
 		
 		$('#fullScreen').click(function(e){
 			init();
@@ -59,14 +56,14 @@ Colors.initialize = {
 
 		//preload images		
 		Colors.utils.preload([
-			'public/img/triangles/bottom_nav.png',
+			'public/img/bottom-nav-mobile.png',
 		    'public/img/colorminutes_share.png'
 		]);
 
 
 		function swipeUp(){
 			if($triNav.hasClass('up')){
-		 		$triNav.removeClass('up').slideUp('fast');
+		 		$triNav.removeClass('up');
 		 	}else if(!$socialNav.hasClass('open')){
 		 		$socialNav.addClass('open');
 		 	}
@@ -76,7 +73,7 @@ Colors.initialize = {
 			if($socialNav.hasClass('open')){
 				$socialNav.removeClass('open');
 			}else if(!$triNav.hasClass('up')){
-		 		$triNav.addClass('up').slideDown('fast');
+		 		$triNav.addClass('up');
 			}
 		}
 
@@ -98,19 +95,21 @@ Colors.initialize = {
 
 			$('body').on('tap', function(e, touch){
 				var w = document.width;
+				var h = document.height;
 				var tapZonePercent = .15;
 				var tapZoneW = w * tapZonePercent;
 				var x = touch.position.x;
+				var y = touch.position.y;
 				if(x > w - tapZoneW){
 					Colors.core.nextTrack();
 				}else if(x < tapZoneW ){
 					Colors.core.prevTrack();
-				}else{
+				}else if(y > 50 && y < h - 100){
 					if($socialNav.hasClass('open')){
 						$socialNav.removeClass('open');
 					}
 					if($triNav.hasClass('up')){
-				 		$triNav.removeClass('up').slideUp('fast');
+				 		$triNav.removeClass('up');
 				 	}
 				}
 			});
