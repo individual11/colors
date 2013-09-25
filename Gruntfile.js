@@ -10,6 +10,7 @@ module.exports = function(grunt) {
     target1:{
        files:{
        		'public/js/app-ck.js':['public/js/plugins/jquery.fullscreen-min.js',
+       								'public/js/plugins/retina-1.1.0.min.js',
        								'public/js/plugins/jquery.touchwipe.min.js',
        								'public/js/plugins/jquery.mobile-events.min.js',
        								'public/js/plugins/jquery.jplayer.min.js', 

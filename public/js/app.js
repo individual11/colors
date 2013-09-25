@@ -5,6 +5,7 @@
 //https://github.com/kayahr/jquery-fullscreen-plugin
 //http://www.jplayer.org/
 //https://github.com/benmajor/jQuery-Mobile-Events
+//http://retinajs.com/
 
 //shortcut for document.ready
 $(function(){	
