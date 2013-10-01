@@ -217,7 +217,9 @@ a{
 		}
 		
 		& .top-tri{
-			background-image:url('../img/colorminutes_share.png');
+			//border: 1px solid red;
+			.at2x('../img/colorminutes_share.png', 165px, 47px);
+			//background-image:url('../img/colorminutes_share.png');
 			width:55px;
 			height:@socialNavHeight;
 			float:left;
@@ -229,13 +231,35 @@ a{
 			background-position:0px 0px;
 		}
 		& #facebook{
-			background-position:(-55px) 0px;
+			background-position:-55px 0px;
 		}
 		& #google-plus{
 			background-position:(2 * -55px) 0px;
 		}
 	}
 }
+
+// @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+// 	#top-nav #social-nav{
+// 		& .top-tri{
+// 				//border: 1px red solid;
+// 				width:55px;// * 2;
+// 				height:@socialNavHeight;// * 2;
+// 				background-size: 110px 94px;
+// 		}
+
+// 		& #twitter{
+// 			background-position:0px 0px;
+// 		}
+// 		& #facebook{
+// 			background-position:(-55px) 0px;
+// 		}
+// 		& #google-plus{
+// 			background-position:(2 * -55px) 0px;
+// 		}
+
+// 	}
+// }
 
 
 .loopingClass (@index) when (@index > 0) {
