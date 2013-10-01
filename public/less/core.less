@@ -108,6 +108,34 @@ a{
 @iterations: 15;
 @tri-nav-size: 41.6px;
 @tri-nav-mobile-size:40px;
+
+#bottom-nav-desktop{
+	position: fixed;
+	bottom:0;
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	#tri-nav{
+		list-style-type: none;
+		padding: 0;
+		margin:0;
+		margin-left: auto;
+		margin-right: auto;
+		width:@iterations * @tri-nav-size;
+
+
+		& .bottom-tri{
+			background-image:url('../img/triangles/bottom_nav.png');
+			width:@tri-nav-size;
+			height:36px;
+			float:left;
+			padding:0;
+			margin:0;
+			cursor: pointer;
+		}	
+	}
+}
+
 #bottom-nav{
 	position: fixed;
 	bottom:0;
@@ -123,25 +151,7 @@ a{
 		}	
 	}
 	
-	#tri-nav{
-		list-style-type: none;
-		padding: 0;
-		margin:0;
-		margin-left: auto;
-		margin-right: auto;
-		width:@iterations * @tri-nav-size;
-		position: fixed;
-		bottom:0;
-		& .bottom-tri{
-			background-image:url('../img/triangles/bottom_nav.png');
-			width:@tri-nav-size;
-			height:36px;
-			float:left;
-			padding:0;
-			margin:0;
-			cursor: pointer;
-		}
-	}
+	
 	
 	#tri-nav-top{
 		list-style-type: none;
@@ -207,7 +217,9 @@ a{
 		}
 		
 		& .top-tri{
-			background-image:url('../img/colorminutes_share.png');
+			//border: 1px solid red;
+			.at2x('../img/colorminutes_share.png', 165px, 47px);
+			//background-image:url('../img/colorminutes_share.png');
 			width:55px;
 			height:@socialNavHeight;
 			float:left;
@@ -219,13 +231,35 @@ a{
 			background-position:0px 0px;
 		}
 		& #facebook{
-			background-position:(-55px) 0px;
+			background-position:-55px 0px;
 		}
 		& #google-plus{
 			background-position:(2 * -55px) 0px;
 		}
 	}
 }
+
+// @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+// 	#top-nav #social-nav{
+// 		& .top-tri{
+// 				//border: 1px red solid;
+// 				width:55px;// * 2;
+// 				height:@socialNavHeight;// * 2;
+// 				background-size: 110px 94px;
+// 		}
+
+// 		& #twitter{
+// 			background-position:0px 0px;
+// 		}
+// 		& #facebook{
+// 			background-position:(-55px) 0px;
+// 		}
+// 		& #google-plus{
+// 			background-position:(2 * -55px) 0px;
+// 		}
+
+// 	}
+// }
 
 
 .loopingClass (@index) when (@index > 0) {
