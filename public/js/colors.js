@@ -4,7 +4,7 @@ Colors.position = 1;
 Colors.length = 15;
 
 Colors.core = {
-	root:(window.location.hostname == 'github.io')? 'colors/':'',
+	root:(window.location.hostname == 'github.io')? 'colors/':'//colorminutes.nfshost.com/',
 	changeTrack:function(trackNumber){
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
@@ -56,8 +56,8 @@ Colors.initialize = {
 
 		//preload images		
 		Colors.utils.preload([
-			'public/img/bottom-nav-mobile.png',
-		    'public/img/colorminutes_share.png'
+			Colors.core.root + 'public/img/bottom-nav-mobile.png',
+		    Colors.core.root + 'public/img/colorminutes_share.png'
 		]);
 
 
@@ -138,13 +138,13 @@ Colors.initialize = {
 	        ready: function(event) {
 	        	console.log("said it was good");	
 	            $(this).jPlayer("setMedia", {
-	                mp3: "public/music/" + Colors.position + ".mp3"
+	                mp3: Colors.core.root + "public/music/" + Colors.position + ".mp3"
 	            });
 	        },
 	        ended: function() { // The $.jPlayer.event.ended event
 				Colors.core.nextTrack(); // go to next song
 			},
-	        swfPath: "public/js/plugins",
+	        swfPath: Colors.core.root + "public/js/plugins",
 	        supplied: "mp3",
 	        solution:"flash,html"
 	    });
@@ -174,23 +174,23 @@ Colors.initialize = {
 			
 		//preload images		
 		Colors.utils.preload([
-			'public/img/triangles/bottom_nav.png',
-		    'public/img/triangles/1.png',
-		    'public/img/triangles/2.png',
-		    'public/img/triangles/3.png',
-		    'public/img/triangles/4.png',
-		    'public/img/triangles/5.png',
-		    'public/img/triangles/6.png',
-		    'public/img/triangles/7.png',
-		    'public/img/triangles/8.png',
-		    'public/img/triangles/9.png',
-		    'public/img/triangles/10.png',
-		    'public/img/triangles/11.png',
-		    'public/img/triangles/12.png',
-		    'public/img/triangles/13.png',
-		    'public/img/triangles/14.png',
-		    'public/img/triangles/15.png',
-		    'public/img/colorminutes_share.png'
+			Colors.core.root + 'public/img/triangles/bottom_nav.png',
+		    Colors.core.root + 'public/img/triangles/1.png',
+		    Colors.core.root + 'public/img/triangles/2.png',
+		    Colors.core.root + 'public/img/triangles/3.png',
+		    Colors.core.root + 'public/img/triangles/4.png',
+		    Colors.core.root + 'public/img/triangles/5.png',
+		    Colors.core.root + 'public/img/triangles/6.png',
+		    Colors.core.root + 'public/img/triangles/7.png',
+		    Colors.core.root + 'public/img/triangles/8.png',
+		    Colors.core.root + 'public/img/triangles/9.png',
+		    Colors.core.root + 'public/img/triangles/10.png',
+		    Colors.core.root + 'public/img/triangles/11.png',
+		    Colors.core.root + 'public/img/triangles/12.png',
+		    Colors.core.root + 'public/img/triangles/13.png',
+		    Colors.core.root + 'public/img/triangles/14.png',
+		    Colors.core.root + 'public/img/triangles/15.png',
+		    Colors.core.root + 'public/img/colorminutes_share.png'
 		]);
 
 		
@@ -347,13 +347,13 @@ Colors.initialize = {
 		$playa.jPlayer({
 	        ready: function(event) {
 	            $(this).jPlayer("setMedia", {
-	                mp3: "public/music/" + Colors.position + ".mp3"
+	                mp3: Colors.core.root + "public/music/" + Colors.position + ".mp3"
 	            });
 	        },
 	        ended: function() { // The $.jPlayer.event.ended event
 				Colors.core.nextTrack(); // go to next song
 			},
-	        swfPath: "public/js/plugins",
+	        swfPath: Colors.core.root + "public/js/plugins",
 	        supplied: "mp3",
 	        solution:"flash,html"
 	    });

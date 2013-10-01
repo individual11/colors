@@ -108,6 +108,34 @@ a{
 @iterations: 15;
 @tri-nav-size: 41.6px;
 @tri-nav-mobile-size:40px;
+
+#bottom-nav-desktop{
+	position: fixed;
+	bottom:0;
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	#tri-nav{
+		list-style-type: none;
+		padding: 0;
+		margin:0;
+		margin-left: auto;
+		margin-right: auto;
+		width:@iterations * @tri-nav-size;
+
+
+		& .bottom-tri{
+			background-image:url('../img/triangles/bottom_nav.png');
+			width:@tri-nav-size;
+			height:36px;
+			float:left;
+			padding:0;
+			margin:0;
+			cursor: pointer;
+		}	
+	}
+}
+
 #bottom-nav{
 	position: fixed;
 	bottom:0;
@@ -123,25 +151,7 @@ a{
 		}	
 	}
 	
-	#tri-nav{
-		list-style-type: none;
-		padding: 0;
-		margin:0;
-		margin-left: auto;
-		margin-right: auto;
-		width:@iterations * @tri-nav-size;
-		position: fixed;
-		bottom:0;
-		& .bottom-tri{
-			background-image:url('../img/triangles/bottom_nav.png');
-			width:@tri-nav-size;
-			height:36px;
-			float:left;
-			padding:0;
-			margin:0;
-			cursor: pointer;
-		}
-	}
+	
 	
 	#tri-nav-top{
 		list-style-type: none;
