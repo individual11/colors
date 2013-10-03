@@ -12,7 +12,7 @@ $(function(){
 	//where am i?
 	if(Modernizr.touch){
 		//on touch device, so set it up that way
-		Colors.initialize.touch();
+		setTimeout(Colors.initialize.touch, 100);
 	}else{
 		//on desktop
 		
