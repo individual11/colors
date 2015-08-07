@@ -78,10 +78,8 @@ Colors.initialize = {
 		}
 
 		function init(){
-			$("#bottom-nav").css("width", "100%")
-			$intro.fadeOut('fast', function(){
-				$playa.jPlayer("play");
-			});
+			$("#bottom-nav").css("width", "100%");
+			
 			$htmlBody.addClass(String("color" + Colors.position));
 			
 			var insurePlay = setTimeout(function(){
