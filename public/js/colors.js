@@ -78,17 +78,20 @@ Colors.initialize = {
 		}
 
 		function init(){
+
 			$("#bottom-nav").css("width", "100%");
 			
-			$htmlBody.addClass(String("color" + Colors.position));
-			
-			var insurePlay = setTimeout(function(){
-				$playa.jPlayer("play");
-			}, 1000);
+			setTimeout(function(){
+					$htmlBody.addClass(String("color" + Colors.position));
+			}, 150);
 
-			$intro.fadeOut('fast', function(){
-				$playa.jPlayer("play");
-				clearTimeout(insurePlay)
+			var insurePlay = setTimeout(function(){
+						$playa.jPlayer("play");
+					}, 250);
+
+			$intro.fadeOut(100, function(){
+				//$playa.jPlayer("play");
+				//clearTimeout(insurePlay)
 			});
 
 			$('body').on('tap', function(e, touch){
@@ -194,6 +197,7 @@ Colors.initialize = {
 		
 		
 		$('#fullScreen').click(function(e){
+			$intro.fadeOut(100);
 			$(document).fullScreen(true);
 		});
 		
@@ -203,6 +207,7 @@ Colors.initialize = {
 			if(!isFullScreen){
 				$playa.jPlayer("stop");
 				$htmlBody.removeClass(String("color" + Colors.position));
+				$('#introTriangle').show();
 				$intro.fadeIn('fast');
 				$('.sidebar.open').removeClass('open');
 				
