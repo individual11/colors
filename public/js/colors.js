@@ -4,7 +4,7 @@ Colors.position = 1;
 Colors.length = 15;
 
 Colors.core = {
-	root:(window.location.hostname == 'github.io')? 'colors/':'//colorminutes.nfshost.com/',
+	root:'',
 	changeTrack:function(trackNumber){
 		if(Colors.position != trackNumber){
 			app.setLocation('#/track/'+trackNumber);
@@ -35,26 +35,26 @@ Colors.utils = {
     },
 	changeColor:function(who, from, to){
 		if(who.hasClass(from)) who.removeClass(from);
-		
+
 		who.addClass(to);
 	}
 }
-			  
+
 Colors.initialize = {
 	touch:function(){
 		isTouch = true;
-		
+
 		$main.html(_.template($('#mobile-standard').html()));
 
 		var $intro = $('#intro'),
 			$triNav = $('#bottom-nav'),
 			$socialNav = $('#social-nav');
-		
+
 		$('#fullScreen').click(function(e){
 			init();
 		});
 
-		//preload images		
+		//preload images
 		Colors.utils.preload([
 			Colors.core.root + 'public/img/bottom-nav-mobile.png',
 		    Colors.core.root + 'public/img/colorminutes_share.png'
@@ -80,7 +80,7 @@ Colors.initialize = {
 		function init(){
 
 			$("#bottom-nav").css("width", "100%");
-			
+
 			setTimeout(function(){
 					$htmlBody.addClass(String("color" + Colors.position));
 			}, 150);
@@ -133,11 +133,11 @@ Colors.initialize = {
 			//gotta kick it off
 			app.run();
 		}
-		
+
 		//AUDIO PART
 		$playa.jPlayer({
 	        ready: function(event) {
-	        	console.log("said it was good");	
+	        	console.log("said it was good");
 	            $(this).jPlayer("setMedia", {
 	                mp3: Colors.core.root + "public/music/" + Colors.position + ".mp3"
 	            });
@@ -149,31 +149,31 @@ Colors.initialize = {
 	        supplied: "mp3",
 	        solution:"flash,html"
 	    });
-		
+
 	},
 	desktop:function(){
 		isDesktop = true;
 		//setup the correct intro
 		$main.html(_.template($('#desktop-standard').html()));
-		
+
 		var $intro = $('#intro'),
 			$triNav = $('#tri-nav'),
 			$socialNav = $('#social-nav'),
 			$rightSide = $('#rightSide'),
 			$leftSide = $('#leftSide'),
 			$popup = $('#popup');
-			
+
 		//hide the bottom and top nav immediately
 		$triNav.slideUp(1);
 		//$socialNav.slideUp(1);
-			
-			
+
+
 		//hide the mouse stuff
 		var justHidden = false,
 			hideMouseTimeout,
 			mouseTimer = 1000;
-			
-		//preload images		
+
+		//preload images
 		Colors.utils.preload([
 			Colors.core.root + 'public/img/triangles/bottom_nav.png',
 		    Colors.core.root + 'public/img/triangles/1.png',
@@ -194,14 +194,14 @@ Colors.initialize = {
 		    Colors.core.root + 'public/img/colorminutes_share.png'
 		]);
 
-		
-		
+
+
 		$('#fullScreen').click(function(e){
 			$intro.fadeOut(100);
 			$(document).fullScreen(true);
 		});
-		
-		
+
+
 		$(document).bind("fullscreenchange", function() {
 			isFullScreen = $(document).fullScreen();
 			if(!isFullScreen){
@@ -210,15 +210,15 @@ Colors.initialize = {
 				$('#introTriangle').show();
 				$intro.fadeIn('fast');
 				$('.sidebar.open').removeClass('open');
-				
+
 				if($triNav.hasClass('up')){
 					$triNav.removeClass('up').slideUp(1);
 				}
-				
+
 				if($socialNav.hasClass('open')){
 					$socialNav.removeClass('open');
 				}
-				
+
 				clearTimeout(hideMouseTimeout);
 				$('html').css({cursor: 'default'});
 				isFullScreen = false;
@@ -237,11 +237,11 @@ Colors.initialize = {
 				$('.sidebar').show();//fixes a bug with body-width
 			}
 		});
-		
+
 		$(document).bind("fullscreenerror", function() {
 		    console.log("Browser rejected fullscreen change");
 		});
-		
+
 		$(document).keydown(function(e){
 			switch(e.keyCode){
 				case 37://left
@@ -252,27 +252,27 @@ Colors.initialize = {
 					break;
 			}
 		});
-		
+
 		//side clicks
 		$('.sidebar').click(function(e){
 			var $this = $(this),
 				dir = $this.data('direction');
-				
+
 			//ok, so where are we going?
 			if(dir === 'next'){
 				Colors.core.nextTrack();
 			}else{
 				Colors.core.prevTrack();
 			}
-			
+
 		});
-		
+
 		//bototm nav clicks
 		$('.bottom-tri').click(function(e){
 			Colors.core.changeTrack($(this).data('id'));
 		});
-	
-	
+
+
 		//checking for mousemovement
 		$(document).mousemove(function(e){
 			if(isFullScreen){
@@ -282,7 +282,7 @@ Colors.initialize = {
 				topThreshold = docHeight * .1,
 				rightThreshold = docWidth * .8,
 				leftThreshold = docWidth * .2;
-				
+
 				//left/right nav
 				if(e.pageX > rightThreshold){
 					if(!$rightSide.hasClass('open')){
@@ -302,7 +302,7 @@ Colors.initialize = {
 						$leftSide.removeClass('open')
 					}
 				}
-				
+
 				//for the bottom nav
 				if(e.pageY > bottomThreshold){
 					if(!$triNav.hasClass('up')){
@@ -313,7 +313,7 @@ Colors.initialize = {
 						$triNav.removeClass('up').slideUp('fast');
 					}
 				}
-				
+
 				//for the top social nav
 				if(e.pageY < topThreshold){
 					if(!$socialNav.hasClass('open')){
@@ -324,7 +324,7 @@ Colors.initialize = {
 						$socialNav.removeClass('open');
 					}
 				}
-				
+
 				//mouseMoveStuff
 				if (!justHidden) {
 		            justHidden = false;
@@ -332,12 +332,12 @@ Colors.initialize = {
 		            $('html').css({cursor: 'default'});
 		            hideMouseTimeout = setTimeout(hide, mouseTimer);
 		        }
-				
+
 			}
-			
+
 		});
-	
-	
+
+
 		function hide() {
 		    $('html').css({cursor: 'none'});
 		    justHidden = true;
@@ -345,7 +345,7 @@ Colors.initialize = {
 		        justHidden = false;
 		    }, 500);
 		}
-				
+
 		//AUDIO PART
 		$playa.jPlayer({
 	        ready: function(event) {
@@ -360,7 +360,7 @@ Colors.initialize = {
 	        supplied: "mp3",
 	        solution:"flash,html"
 	    });
-	    
+
 	    //SAMMY PART.. run the app
 	    //app.raise_errors = true;
 	    app.run();
